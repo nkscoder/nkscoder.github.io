@@ -28,7 +28,7 @@
 
 ## About
 
-Portfolio website featuring **Ollama AI**, **Django**, **PostgreSQL**, **AWS**, and **Linux** projects by [NKSCoder](https://github.com/nkscoder). Includes AI-powered bank statement analysis for Airtel Payments Bank.
+Portfolio website featuring **Ollama AI on NVIDIA GPU**, **Django**, **PostgreSQL**, **AWS**, and **Linux** projects by [NKSCoder](https://github.com/nkscoder). Includes GPU-configured LLM bank statement analysis for Airtel Payments Bank.
 
 | | |
 |---|---|
