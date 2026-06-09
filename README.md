@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Official portfolio of Nitesh Kumar Singh</strong><br>
-  Senior Python Developer · 12+ Years Experience
+  Senior Software Developer · 12+ Years Experience
 </p>
 
 <p align="center">
@@ -33,7 +33,7 @@ Portfolio website featuring **AI**, **Django**, **PostgreSQL**, **AWS**, and **L
 | | |
 |---|---|
 | **Name** | Nitesh Kumar Singh |
-| **Role** | Senior Python Developer |
+| **Role** | Senior Software Developer |
 | **Phone** | +91 7827495599 |
 | **LinkedIn** | [linkedin.com/in/nitesh-kumar-singh-897437a2](https://www.linkedin.com/in/nitesh-kumar-singh-897437a2/) |
 | **Experience** | 12+ years |
