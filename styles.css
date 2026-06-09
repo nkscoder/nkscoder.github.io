@@ -769,10 +769,6 @@ main {
   .project-grid {
     grid-template-columns: 1fr;
   }
-
-  .edu-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 /* Timeline — experience */
@@ -930,6 +926,11 @@ main {
   gap: 1.5rem;
 }
 
+.skills-grid--wide {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 2rem;
+}
+
 .skills-group h3 {
   font-size: 0.85rem;
   color: var(--accent-light);
@@ -1006,12 +1007,15 @@ main {
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 960px) {
+  .skills-grid--wide {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .edu-grid {
+@media (max-width: 768px) {
+  .skills-grid,
+  .skills-grid--wide {
     grid-template-columns: 1fr;
   }
 
