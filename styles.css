@@ -186,6 +186,7 @@ a:hover {
 main {
   position: relative;
   z-index: 1;
+  overflow-x: clip;
 }
 
 .hero {
@@ -194,24 +195,25 @@ main {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 2rem;
-  align-items: stretch;
+  align-items: center;
 }
 
 .hero-visual {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  height: 100%;
+  gap: 0.85rem;
+  min-width: 0;
 }
 
 .hero-brand-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  text-align: center;
-  padding: 1.5rem 1.25rem;
+  gap: 1rem;
+  text-align: left;
+  padding: 1.25rem 1.35rem;
   background: linear-gradient(145deg, rgba(99, 102, 241, 0.1), rgba(34, 211, 238, 0.05));
   border: 1px solid rgba(99, 102, 241, 0.25);
   border-radius: var(--radius-lg);
@@ -219,10 +221,10 @@ main {
 }
 
 .hero-brand-logo {
-  width: 110px;
+  width: 88px;
   height: auto;
   filter: drop-shadow(0 8px 24px rgba(99, 102, 241, 0.35));
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 
 .hero-brand-name {
@@ -244,9 +246,13 @@ main {
   text-transform: uppercase;
 }
 
+.hero-brand-text {
+  min-width: 0;
+}
+
 .hero-quick-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
 }
 
@@ -279,9 +285,9 @@ main {
 }
 
 .terminal--compact {
-  flex: 1;
-  max-width: none;
-  margin-top: auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .hero-content .hero-actions {
@@ -848,6 +854,16 @@ main {
     order: -1;
   }
 
+  .hero-brand-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .hero-brand-text {
+    text-align: center;
+  }
+
   .hero-brand-logo {
     width: 90px;
   }
@@ -960,8 +976,9 @@ main {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
+  width: 100%;
 }
 
 .project-card {
@@ -971,6 +988,8 @@ main {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  width: 100%;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
@@ -997,18 +1016,21 @@ main {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--bg-elevated);
+  width: 100%;
 }
 
 .project-thumb img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
+  vertical-align: middle;
 }
 
 .project-card:hover .project-thumb img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .project-thumb-overlay {
@@ -1075,8 +1097,12 @@ main {
 }
 
 .skills-grid--wide {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: 2rem;
+}
+
+.skills-group {
+  min-width: 0;
 }
 
 .skills-group h3 {
