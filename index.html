@@ -143,19 +143,31 @@
         </div>
       </div>
 
-      <div class="terminal" aria-label="Developer terminal preview">
-        <div class="terminal-header">
-          <span class="terminal-dot terminal-dot--red"></span>
-          <span class="terminal-dot terminal-dot--yellow"></span>
-          <span class="terminal-dot terminal-dot--green"></span>
-          <span class="terminal-title">nkscoder@prod ~ %</span>
+      <div class="hero-visual">
+        <div class="hero-brand-card">
+          <img src="nkscoder_logo.png" alt="NKSCoder" class="hero-brand-logo" width="140" height="140">
+          <p class="hero-brand-name">NKSCoder</p>
+          <p class="hero-brand-tag">AI · Web Development · Automation</p>
         </div>
-        <div class="terminal-body">
-          <p><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></p>
-          <p class="t-out">Nitesh Kumar Singh — Senior Software Developer</p>
-          <p><span class="t-prompt">$</span> <span class="t-cmd">cat stack.json</span></p>
-          <p class="t-out t-json">{ "python": "3.11", "django": "4.2", "db": "PostgreSQL", "queue": "Celery+RabbitMQ", "compute": "Ray" }</p>
-          <p><span class="t-prompt">$</span> <span class="t-cmd typing-cursor">deploy --production</span></p>
+        <div class="hero-quick-stats">
+          <div class="hero-stat-chip"><strong>12+</strong><span>Years</span></div>
+          <div class="hero-stat-chip"><strong>50+</strong><span>Projects</span></div>
+          <div class="hero-stat-chip"><strong>Fintech</strong><span>Expert</span></div>
+        </div>
+        <div class="terminal terminal--compact" aria-label="Developer terminal preview">
+          <div class="terminal-header">
+            <span class="terminal-dot terminal-dot--red"></span>
+            <span class="terminal-dot terminal-dot--yellow"></span>
+            <span class="terminal-dot terminal-dot--green"></span>
+            <span class="terminal-title">nkscoder@prod ~ %</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></p>
+            <p class="t-out">Nitesh Kumar Singh — Senior Software Developer</p>
+            <p><span class="t-prompt">$</span> <span class="t-cmd">cat stack.json</span></p>
+            <p class="t-out t-json">{ "django": "4.2", "db": "PostgreSQL", "queue": "Celery", "cloud": "AWS" }</p>
+            <p><span class="t-prompt">$</span> <span class="t-cmd typing-cursor">status --available</span></p>
+          </div>
         </div>
       </div>
     </section>
@@ -241,79 +253,126 @@
     </section>
 
     <section id="projects" class="section container">
-      <h2 class="section-title">Featured Projects</h2>
-      <p class="section-subtitle">Production systems across fintech, hospitality, e-commerce, and media.</p>
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Production systems across fintech, hospitality, e-commerce, and media.</p>
+      </div>
       <div class="project-grid">
         <article class="project-card project-card--highlight">
-          <div class="project-top">
-            <h3>Bank Statement Analysis</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/fintech.svg" alt="Bank Statement Analysis project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>Bank Statement Analysis</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">Fintech · 2025</span>
+            <p>Scalable ingestion &amp; risk analysis — Pandas, PostgreSQL, Celery, RabbitMQ, Ray for high-volume transactions.</p>
+            <span class="project-stack">Python · Django · Ray · Celery</span>
           </div>
-          <p>Scalable ingestion &amp; risk analysis platform — Pandas, PostgreSQL, Celery, RabbitMQ, Ray for high-volume transaction processing.</p>
-          <span class="project-stack">Python · Django · Ray · Celery</span>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>JM Financial</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/finance.svg" alt="JM Financial project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>JM Financial</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">Finance · 2023–25</span>
+            <p>Investment banking APIs, institutional equities, research, and private equity modules.</p>
+            <a href="https://jm-me.voxturr.us/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
           </div>
-          <p>Investment banking platform APIs, institutional equities, research, and private equity modules.</p>
-          <a href="https://jm-me.voxturr.us/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>Textile Stock India</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/ecommerce.svg" alt="Textile Stock India project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>Textile Stock India</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">E-commerce · 2021–23</span>
+            <p>Surplus textile marketplace with Algolia search, Razorpay, and WhatsApp integration.</p>
+            <a href="http://textilestockindia.com/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
           </div>
-          <p>Marketplace for surplus textile stock with Algolia search, Razorpay payments, and WhatsApp integration.</p>
-          <a href="http://textilestockindia.com/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>Wave Resident App</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/proptech.svg" alt="Wave Resident App project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>Wave Resident App</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">PropTech · 2017–20</span>
+            <p>Resident portal for billing, gate passes, polls — microservices with FCM &amp; payments.</p>
+            <a href="https://play.google.com/store/apps/details?id=in.wavecorp.cityapp.resident" class="project-link" target="_blank" rel="noopener noreferrer">Play Store →</a>
           </div>
-          <p>Resident portal for complaints, billing, gate passes, polls — microservices with FCM &amp; payment gateways.</p>
-          <a href="https://play.google.com/store/apps/details?id=in.wavecorp.cityapp.resident" class="project-link" target="_blank" rel="noopener noreferrer">Play Store →</a>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>goSTOPS</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/travel.svg" alt="goSTOPS project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>goSTOPS</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">Travel · 2020</span>
+            <p>Backpacker hostel booking with Django APIs and Jinja2 server-side rendering.</p>
+            <a href="https://gostops.com/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
           </div>
-          <p>Backpacker hostel booking platform with Django APIs and Jinja2 server-side rendering.</p>
-          <a href="https://gostops.com/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>Ujjivan Bank Surveys</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/banking.svg" alt="Ujjivan Bank Surveys project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>Ujjivan Bank Surveys</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">Banking · 2020–21</span>
+            <p>Employee survey system — database design, architecture, and REST APIs with Django.</p>
           </div>
-          <p>Employee survey system — database design, system architecture, and REST APIs with Django &amp; MySQL.</p>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>Angel One Smart Money</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/finance.svg" alt="Angel One Smart Money project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>Angel One Smart Money</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">Finance</span>
+            <p>Financial services web platform integration and backend support.</p>
+            <a href="https://smartmoney.angelone.in/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
           </div>
-          <p>Financial services web platform integration and backend support.</p>
-          <a href="https://smartmoney.angelone.in/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>ANI News</h3>
+          <div class="project-thumb">
+            <img src="assets/projects/media.svg" alt="ANI News project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>ANI News</h3>
+            </div>
+          </div>
+          <div class="project-body">
             <span class="project-tag">Media</span>
+            <p>News platform backend development and API integrations.</p>
+            <a href="https://aninews.in/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
           </div>
-          <p>News platform backend development and API integrations.</p>
-          <a href="https://aninews.in/" class="project-link" target="_blank" rel="noopener noreferrer">View project →</a>
         </article>
         <article class="project-card">
-          <div class="project-top">
-            <h3>Django Coupons Plugin</h3>
-            <span class="project-tag">Open Source</span>
+          <div class="project-thumb">
+            <img src="assets/projects/opensource.svg" alt="Django Coupons Plugin project" loading="lazy">
+            <div class="project-thumb-overlay">
+              <h3>Django Coupons Plugin</h3>
+            </div>
           </div>
-          <p>Reusable Django plugin for coupon management and promotions.</p>
-          <a href="https://github.com/nkscoder/coupons" class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          <div class="project-body">
+            <span class="project-tag">Open Source</span>
+            <p>Reusable Django plugin for coupon management and promotions.</p>
+            <a href="https://github.com/nkscoder/coupons" class="project-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
         </article>
       </div>
     </section>
