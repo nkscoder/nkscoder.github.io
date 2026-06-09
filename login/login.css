@@ -340,7 +340,7 @@
   max-width: 100%;
 }
 
-/* Mobile */
+/* Tablet */
 @media (max-width: 960px) {
   .studio-page {
     grid-template-columns: 1fr;
@@ -351,29 +351,66 @@
     border-right: none;
     border-bottom: 1px solid var(--border);
     padding: 1.5rem;
+    overflow-y: visible;
   }
 
   .studio-logo {
     width: 120px;
   }
 
-  .studio-stats {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .studio-main {
     max-height: none;
     padding: 2rem 1.25rem 3rem;
+    overflow-y: visible;
+  }
+
+  .studio-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .studio-side {
+    padding: 1.25rem;
+  }
+
+  .studio-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .studio-hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .studio-actions {
+    flex-direction: column;
+  }
+
+  .studio-actions .btn {
+    width: 100%;
   }
 
   .studio-cards {
     grid-template-columns: 1fr;
   }
+
+  .studio-main {
+    padding: 1.75rem 1rem 2.5rem;
+  }
+
+  .terminal-body {
+    font-size: 0.75rem;
+    overflow-x: auto;
+  }
 }
 
 @media (max-width: 480px) {
-  .studio-list,
-  .studio-contact-block {
-    display: none;
+  .studio-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-pills .tech-pill {
+    font-size: 0.68rem;
   }
 }
