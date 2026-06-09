@@ -1,6 +1,6 @@
 # nkscoder.github.io
 
-Personal portfolio site for **Nitesh Kumar** — Senior Software Developer.
+Personal portfolio site for **Nitesh Kumar Singh** — Senior Software Developer.
 
 Live at: [https://nkscoder.github.io](https://nkscoder.github.io)
 
