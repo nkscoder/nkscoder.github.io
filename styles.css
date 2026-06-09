@@ -109,10 +109,24 @@ a:hover {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-family: var(--mono);
   font-weight: 600;
   font-size: 1.1rem;
   color: var(--text);
+}
+
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.3));
+}
+
+.logo-text {
+  display: inline;
 }
 
 .logo-bracket {
@@ -709,5 +723,9 @@ main {
 
   .hero {
     padding-top: 2.5rem;
+  }
+
+  .logo-text {
+    display: none;
   }
 }

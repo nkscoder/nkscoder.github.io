@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nkscoder.github.io/sitemap.xml
+Sitemap: https://nkscoder.in/sitemap.xml
