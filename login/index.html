@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Sign In | NKSCoder</title>
-  <meta name="description" content="NKSCoder secure sign in">
+  <meta name="robots" content="index, follow">
+  <title>NKSCoder Studio | Nitesh Kumar Singh</title>
+  <meta name="description" content="NKSCoder — AI, Web Development & Automation by Nitesh Kumar Singh. Django, PostgreSQL, AWS expert.">
   <meta name="theme-color" content="#0a0a0f">
+  <link rel="canonical" href="https://nkscoder.in/login/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,134 +15,171 @@
   <link rel="stylesheet" href="login.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
-<body class="login-body">
+<body class="studio-body">
   <div class="bg-grid" aria-hidden="true"></div>
   <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
   <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
 
-  <div class="login-page">
-    <!-- Brand panel -->
-    <aside class="login-brand" aria-label="NKSCoder branding">
-      <a href="../index.html" class="login-back">
+  <div class="studio-page">
+    <!-- Side info panel -->
+    <aside class="studio-side" aria-label="NKSCoder information">
+      <a href="../index.html" class="studio-back">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
-        Back to site
+        Back to home
       </a>
 
-      <div class="login-brand-content">
-        <div class="login-logo-wrap">
-          <img src="../nkscoder_logo.png" alt="NKSCoder logo" class="login-logo" width="220" height="220">
-          <div class="login-logo-ring" aria-hidden="true"></div>
+      <div class="studio-side-inner">
+        <div class="studio-logo-wrap">
+          <img src="../nkscoder_logo.png" alt="NKSCoder logo" class="studio-logo" width="200" height="200">
+          <div class="studio-logo-ring" aria-hidden="true"></div>
         </div>
 
-        <p class="login-tagline">AI <span>•</span> WEB DEVELOPMENT <span>•</span> AUTOMATION</p>
+        <p class="studio-tagline">AI <span>•</span> WEB DEVELOPMENT <span>•</span> AUTOMATION</p>
 
-        <div class="login-brand-features">
-          <div class="login-feature">
-            <span class="login-feature-icon">🐍</span>
-            <div>
-              <strong>Django Backend</strong>
-              <span>Production-grade APIs</span>
-            </div>
+        <div class="studio-info-block">
+          <h2 class="studio-info-title">About NKSCoder</h2>
+          <p class="studio-info-text">
+            A personal brand by <strong>Nitesh Kumar Singh</strong> — building production-ready
+            software with Django, PostgreSQL, AI, and AWS.
+          </p>
+        </div>
+
+        <div class="studio-info-block">
+          <h2 class="studio-info-title">Core Stack</h2>
+          <div class="studio-pills">
+            <span class="tech-pill">Django</span>
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill tech-pill--ai">AI / LLM</span>
+            <span class="tech-pill">AWS</span>
+            <span class="tech-pill">REST APIs</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">CI/CD</span>
           </div>
-          <div class="login-feature">
-            <span class="login-feature-icon">🤖</span>
-            <div>
-              <strong>AI Systems</strong>
-              <span>Intelligent automation</span>
-            </div>
+        </div>
+
+        <div class="studio-info-block">
+          <h2 class="studio-info-title">What I Build</h2>
+          <ul class="studio-list">
+            <li>
+              <span class="studio-list-icon">⚡</span>
+              Scalable backend APIs & microservices
+            </li>
+            <li>
+              <span class="studio-list-icon">🗄️</span>
+              Database design & query optimization
+            </li>
+            <li>
+              <span class="studio-list-icon">🤖</span>
+              AI-powered features & automation
+            </li>
+            <li>
+              <span class="studio-list-icon">☁️</span>
+              Cloud deployments on AWS
+            </li>
+            <li>
+              <span class="studio-list-icon">🔧</span>
+              DevOps pipelines & monitoring
+            </li>
+          </ul>
+        </div>
+
+        <div class="studio-stats">
+          <div class="studio-stat">
+            <span class="studio-stat-num">Senior</span>
+            <span class="studio-stat-label">Developer</span>
           </div>
-          <div class="login-feature">
-            <span class="login-feature-icon">☁️</span>
-            <div>
-              <strong>AWS Cloud</strong>
-              <span>Scalable infrastructure</span>
-            </div>
+          <div class="studio-stat">
+            <span class="studio-stat-num">5+</span>
+            <span class="studio-stat-label">Years exp.</span>
           </div>
+          <div class="studio-stat">
+            <span class="studio-stat-num">100%</span>
+            <span class="studio-stat-label">Remote ready</span>
+          </div>
+        </div>
+
+        <div class="studio-contact-block">
+          <h2 class="studio-info-title">Get in Touch</h2>
+          <a href="mailto:nkscoder@gmail.com" class="studio-contact-link">
+            <span>✉️</span> nkscoder@gmail.com
+          </a>
+          <a href="https://github.com/nkscoder" class="studio-contact-link" target="_blank" rel="noopener noreferrer">
+            <span>🔗</span> github.com/nkscoder
+          </a>
+          <a href="https://nkscoder.in" class="studio-contact-link">
+            <span>🌐</span> nkscoder.in
+          </a>
         </div>
       </div>
 
-      <p class="login-brand-footer">© 2026 Nitesh Kumar Singh</p>
+      <p class="studio-side-footer">© 2026 Nitesh Kumar Singh</p>
     </aside>
 
-    <!-- Form panel -->
-    <main class="login-main">
-      <div class="login-card">
-        <div class="login-card-header">
-          <span class="login-badge">
-            <span class="pulse"></span>
-            Secure access
-          </span>
-          <h1>Welcome back</h1>
-          <p>Sign in to your NKSCoder dashboard</p>
+    <!-- Main content -->
+    <main class="studio-main">
+      <div class="studio-content">
+        <span class="studio-badge">
+          <span class="pulse"></span>
+          Available for opportunities
+        </span>
+
+        <h1 class="studio-hero-title">
+          Nitesh <span class="gradient-text">Kumar Singh</span>
+        </h1>
+        <p class="studio-hero-role">Senior Software Developer</p>
+        <p class="studio-hero-desc">
+          I design and ship reliable backend systems, intelligent AI integrations,
+          and cloud-native applications — from architecture to production deployment.
+        </p>
+
+        <div class="studio-actions">
+          <a href="../contact.html" class="btn btn--primary">Hire Me</a>
+          <a href="../index.html" class="btn btn--ghost">View Portfolio</a>
         </div>
 
-        <form class="login-form" id="login-form" action="#" method="post" novalidate>
-          <div class="login-field">
-            <label for="email">Email address</label>
-            <div class="login-input-wrap">
-              <svg class="login-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-            </div>
+        <div class="studio-cards">
+          <article class="studio-card studio-card--highlight">
+            <div class="studio-card-icon">🤖</div>
+            <h3>AI Integration</h3>
+            <p>LLM workflows, chatbots, document processing, and smart automation built into real products.</p>
+          </article>
+          <article class="studio-card">
+            <div class="studio-card-icon">🐍</div>
+            <h3>Backend Engineering</h3>
+            <p>Django REST APIs, authentication, caching, and clean architecture for long-term maintainability.</p>
+          </article>
+          <article class="studio-card">
+            <div class="studio-card-icon">🗄️</div>
+            <h3>Data Layer</h3>
+            <p>PostgreSQL schema design, migrations, indexing, and performance tuning for high-traffic apps.</p>
+          </article>
+          <article class="studio-card">
+            <div class="studio-card-icon">☁️</div>
+            <h3>Cloud & DevOps</h3>
+            <p>AWS EC2, S3, RDS, Lambda — plus Docker, CI/CD, and zero-downtime deployments.</p>
+          </article>
+        </div>
+
+        <div class="terminal studio-terminal" aria-label="Developer terminal preview">
+          <div class="terminal-header">
+            <span class="terminal-dot terminal-dot--red"></span>
+            <span class="terminal-dot terminal-dot--yellow"></span>
+            <span class="terminal-dot terminal-dot--green"></span>
+            <span class="terminal-title">nkscoder@studio ~ %</span>
           </div>
-
-          <div class="login-field">
-            <div class="login-label-row">
-              <label for="password">Password</label>
-              <a href="#" class="login-forgot">Forgot password?</a>
-            </div>
-            <div class="login-input-wrap">
-              <svg class="login-input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0110 0v4"/>
-              </svg>
-              <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
-              <button type="button" class="login-toggle-pw" id="toggle-pw" aria-label="Show password">
-                <svg class="icon-show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-                </svg>
-                <svg class="icon-hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" hidden>
-                  <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/>
-                  <line x1="1" y1="1" x2="23" y2="23"/>
-                </svg>
-              </button>
-            </div>
+          <div class="terminal-body">
+            <p><span class="t-prompt">$</span> <span class="t-cmd">whoami</span></p>
+            <p class="t-out">Nitesh Kumar Singh — Senior Software Developer</p>
+            <p><span class="t-prompt">$</span> <span class="t-cmd">cat services.json</span></p>
+            <p class="t-out t-json">{ "ai": true, "backend": "Django", "db": "PostgreSQL", "cloud": "AWS" }</p>
+            <p><span class="t-prompt">$</span> <span class="t-cmd typing-cursor">status --available</span></p>
           </div>
-
-          <label class="login-remember">
-            <input type="checkbox" name="remember" checked>
-            <span class="login-checkmark"></span>
-            Keep me signed in
-          </label>
-
-          <button type="submit" class="btn btn--primary btn--full login-submit">
-            <span>Sign In</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </button>
-        </form>
-
-        <div class="login-divider"><span>or continue with</span></div>
-
-        <a href="https://github.com/nkscoder" class="login-social" target="_blank" rel="noopener noreferrer">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          GitHub
-        </a>
-
-        <p class="login-signup">
-          Need access? <a href="../contact.html">Contact Nitesh</a>
-        </p>
+        </div>
       </div>
     </main>
   </div>
-
-  <script src="login.js"></script>
 </body>
 </html>
