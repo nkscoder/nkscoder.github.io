@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="nkscoder_logo.png" alt="NKSCoder Logo" width="220">
+  <img src="assets/brand/nkscoder-logo.webp" alt="NKSCoder Logo" width="220">
 </p>
 
 <h1 align="center">NKSCoder</h1>

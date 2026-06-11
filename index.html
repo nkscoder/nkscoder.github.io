@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="apple-touch-icon" href="/og-image.svg">
+  <link rel="preload" as="image" href="assets/brand/nkscoder-logo-176.avif" type="image/avif">
 
   <script type="application/ld+json">
   {
@@ -86,7 +87,11 @@
   <header class="header">
     <nav class="nav container" aria-label="Main navigation">
       <a href="index.html" class="logo" aria-label="NKSCoder — Nitesh Kumar Singh home">
-        <img src="nkscoder_logo.png" alt="NKSCoder logo — Nitesh Kumar Singh portfolio" class="logo-img" width="36" height="36">
+        <picture>
+          <source type="image/avif" srcset="assets/brand/nkscoder-logo-72.avif" width="72" height="72">
+          <source type="image/webp" srcset="assets/brand/nkscoder-logo-72.webp" width="72" height="72">
+          <img src="assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder logo — Nitesh Kumar Singh portfolio" class="logo-img" width="36" height="36" decoding="async">
+        </picture>
         <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
       </a>
       <ul class="nav-links">
@@ -146,7 +151,11 @@
 
       <div class="hero-visual">
         <div class="hero-brand-card">
-          <img src="nkscoder_logo.png" alt="NKSCoder brand logo" class="hero-brand-logo" width="88" height="88">
+          <picture>
+            <source type="image/avif" srcset="assets/brand/nkscoder-logo-176.avif" width="176" height="176">
+            <source type="image/webp" srcset="assets/brand/nkscoder-logo-176.webp" width="176" height="176">
+            <img src="assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder brand logo" class="hero-brand-logo" width="88" height="88" decoding="async" fetchpriority="high">
+          </picture>
           <div class="hero-brand-text">
             <p class="hero-brand-name">NKSCoder</p>
             <p class="hero-brand-tag">AI · Web Development · Automation</p>
@@ -264,7 +273,11 @@
       <div class="project-grid">
         <article class="project-card project-card--highlight">
           <div class="project-thumb">
-            <img src="assets/projects/bank-statement.jpg" alt="Bank Statement Analysis — Ollama AI fintech platform" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/bank-statement.avif">
+              <source type="image/webp" srcset="assets/projects/bank-statement.webp">
+              <img src="assets/projects/bank-statement.jpg" alt="Bank Statement Analysis — Ollama AI fintech platform" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>Bank Statement Analysis</h3>
             </div>
@@ -277,7 +290,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/jm-financial.jpg" alt="JM Financial investment banking platform" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/jm-financial.avif">
+              <source type="image/webp" srcset="assets/projects/jm-financial.webp">
+              <img src="assets/projects/jm-financial.jpg" alt="JM Financial investment banking platform" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>JM Financial</h3>
             </div>
@@ -290,7 +307,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/textile-stock.jpg" alt="Textile Stock India e-commerce marketplace" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/textile-stock.avif">
+              <source type="image/webp" srcset="assets/projects/textile-stock.webp">
+              <img src="assets/projects/textile-stock.jpg" alt="Textile Stock India e-commerce marketplace" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>Textile Stock India</h3>
             </div>
@@ -303,7 +324,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/wave-resident.jpg" alt="Wave Resident App proptech platform" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/wave-resident.avif">
+              <source type="image/webp" srcset="assets/projects/wave-resident.webp">
+              <img src="assets/projects/wave-resident.jpg" alt="Wave Resident App proptech platform" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>Wave Resident App</h3>
             </div>
@@ -316,7 +341,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/gostops.jpg" alt="goSTOPS travel hostel booking platform" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/gostops.avif">
+              <source type="image/webp" srcset="assets/projects/gostops.webp">
+              <img src="assets/projects/gostops.jpg" alt="goSTOPS travel hostel booking platform" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>goSTOPS</h3>
             </div>
@@ -329,7 +358,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/ujjivan-bank.jpg" alt="Ujjivan Bank employee survey system" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/ujjivan-bank.avif">
+              <source type="image/webp" srcset="assets/projects/ujjivan-bank.webp">
+              <img src="assets/projects/ujjivan-bank.jpg" alt="Ujjivan Bank employee survey system" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>Ujjivan Bank Surveys</h3>
             </div>
@@ -341,7 +374,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/angel-one.jpg" alt="Angel One Smart Money fintech platform" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/angel-one.avif">
+              <source type="image/webp" srcset="assets/projects/angel-one.webp">
+              <img src="assets/projects/angel-one.jpg" alt="Angel One Smart Money fintech platform" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>Angel One Smart Money</h3>
             </div>
@@ -354,7 +391,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/aninews.jpg" alt="ANI News media platform" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/aninews.avif">
+              <source type="image/webp" srcset="assets/projects/aninews.webp">
+              <img src="assets/projects/aninews.jpg" alt="ANI News media platform" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>ANI News</h3>
             </div>
@@ -367,7 +408,11 @@
         </article>
         <article class="project-card">
           <div class="project-thumb">
-            <img src="assets/projects/django-coupons.jpg" alt="Django Coupons open source plugin" loading="lazy" width="640" height="360">
+            <picture>
+              <source type="image/avif" srcset="assets/projects/django-coupons.avif">
+              <source type="image/webp" srcset="assets/projects/django-coupons.webp">
+              <img src="assets/projects/django-coupons.jpg" alt="Django Coupons open source plugin" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
             <div class="project-thumb-overlay">
               <h3>Django Coupons Plugin</h3>
             </div>
