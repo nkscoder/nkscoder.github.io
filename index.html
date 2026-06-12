@@ -132,7 +132,7 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="blog/index.html" class="nav-link">Blog</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="contact.html" class="nav-link nav-link--cta">Contact</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -179,6 +179,7 @@
         <div class="hero-actions">
           <a href="contact.html" class="btn btn--primary">Get in Touch</a>
           <a href="#projects" class="btn btn--ghost">View Projects</a>
+          <a href="#blog" class="btn btn--ghost">Read Blog</a>
           <a href="https://github.com/nkscoder" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </div>
@@ -461,7 +462,61 @@
       </div>
     </section>
 
-    <section id="skills" class="section section--alt">
+    <section id="blog" class="section section--alt">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Blog &amp; Case Studies</h2>
+          <p class="section-subtitle">Technical articles on AI, Django fintech, and Python backends — from production work at Quess Corp Ltd &amp; Airtel Payments Bank.</p>
+        </div>
+        <div class="blog-grid blog-grid--home">
+          <article class="blog-card blog-card--featured">
+            <a href="blog/bank-statement-analysis-ollama-gpu.html" class="blog-card-link">
+              <div class="blog-card-thumb">
+                <picture>
+                  <source type="image/avif" srcset="assets/projects/bank-statement.avif">
+                  <source type="image/webp" srcset="assets/projects/bank-statement.webp">
+                  <img src="assets/projects/bank-statement.jpg" alt="Bank statement analysis with Ollama AI" loading="lazy" width="640" height="426" decoding="async">
+                </picture>
+              </div>
+              <div class="blog-card-body">
+                <span class="blog-tag">Case Study · Fintech · AI</span>
+                <h3>Building AI Bank Statement Analysis with Ollama on NVIDIA GPU</h3>
+                <p>Local LLM inference, GPU batch processing, and intelligent parsing for Airtel Payments Bank.</p>
+                <time class="blog-date" datetime="2026-06-10">June 10, 2026</time>
+                <span class="blog-read-more">Read case study →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card">
+            <a href="blog/django-fintech-backend-architecture.html" class="blog-card-link">
+              <div class="blog-card-body">
+                <span class="blog-tag">Architecture · Django</span>
+                <h3>Django Backend Architecture for Fintech at Scale</h3>
+                <p>REST API design, PostgreSQL patterns, and RBAC from JM Financial and banking projects.</p>
+                <time class="blog-date" datetime="2026-06-09">June 9, 2026</time>
+                <span class="blog-read-more">Read article →</span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card">
+            <a href="blog/scaling-python-celery-rabbitmq-ray.html" class="blog-card-link">
+              <div class="blog-card-body">
+                <span class="blog-tag">Python · Distributed Systems</span>
+                <h3>Scaling Python Workers with Celery, RabbitMQ, and Ray</h3>
+                <p>High-volume PDF and CSV ingestion pipelines for banking workloads.</p>
+                <time class="blog-date" datetime="2026-06-08">June 8, 2026</time>
+                <span class="blog-read-more">Read article →</span>
+              </div>
+            </a>
+          </article>
+        </div>
+        <p class="blog-section-cta">
+          <a href="blog/index.html" class="btn btn--ghost">View all articles →</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
       <div class="container">
         <h2 class="section-title">Technical Skills</h2>
         <p class="section-subtitle">Full-stack Python expertise — backend, data, cloud, and integrations from 12+ years of production work.</p>

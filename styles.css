@@ -1529,6 +1529,19 @@ main {
   color: var(--text-muted);
 }
 
+.blog-grid--home {
+  margin-top: 0.5rem;
+}
+
+.blog-grid--home .blog-card h3 {
+  font-size: 1.15rem;
+}
+
+.blog-section-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 .article-page {
   position: relative;
   z-index: 1;
