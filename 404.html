@@ -6,11 +6,36 @@
   <meta name="robots" content="noindex, follow">
   <title>Page Not Found | NKSCoder</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+    }
+    .error-code {
+      font-size: clamp(3rem, 18vw, 4rem);
+      margin-bottom: 0.5rem;
+    }
+    .error-msg {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 28ch;
+    }
+    .error-page .btn {
+      width: min(100%, 280px);
+    }
+  </style>
 </head>
 <body>
-  <main class="container" style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;">
-    <h1 class="hero-title" style="font-size:4rem;margin-bottom:0.5rem;">404</h1>
-    <p style="color:var(--text-muted);margin-bottom:2rem;">This page doesn't exist.</p>
+  <main class="container error-page">
+    <h1 class="hero-title error-code">404</h1>
+    <p class="error-msg">This page doesn't exist.</p>
     <a href="index.html" class="btn btn--primary">Back to Home</a>
   </main>
 </body>

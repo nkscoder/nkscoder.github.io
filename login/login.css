@@ -413,4 +413,36 @@
   .studio-pills .tech-pill {
     font-size: 0.68rem;
   }
+
+  .studio-logo {
+    width: 100px;
+  }
+
+  .studio-side {
+    padding: 1rem;
+  }
+
+  .studio-main {
+    padding: 1.5rem 0.85rem 2rem;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .studio-page {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-side {
+    max-height: none;
+    padding: 1rem 1.25rem;
+  }
+
+  .studio-logo {
+    width: 80px;
+  }
+
+  .studio-logo-wrap {
+    margin-bottom: 0.5rem;
+  }
 }
