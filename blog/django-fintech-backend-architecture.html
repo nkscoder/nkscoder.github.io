@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Django Fintech Backend Architecture at Scale | NKSCoder</title>
+  <meta name="description" content="Django REST API patterns for fintech: PostgreSQL design, RBAC, audit trails, and scalable backends — lessons from JM Financial, Ujjivan Bank, and 12+ years of Python.">
+  <meta name="keywords" content="Django fintech, REST API architecture, PostgreSQL fintech, Python backend, JM Financial, Ujjivan Bank, Nitesh Kumar Singh, NKSCoder, senior software developer">
+  <meta name="author" content="Nitesh Kumar Singh">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://nkscoder.in/blog/django-fintech-backend-architecture.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Django Backend Architecture for Fintech at Scale">
+  <meta property="og:description" content="REST API design, PostgreSQL patterns, and RBAC for financial platforms.">
+  <meta property="og:image" content="https://nkscoder.in/og-image.png">
+  <meta property="og:url" content="https://nkscoder.in/blog/django-fintech-backend-architecture.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nkscoder.in/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Django Backend Architecture for Fintech at Scale",
+    "description": "REST API design, PostgreSQL indexing, RBAC, and audit trails for financial platforms.",
+    "image": "https://nkscoder.in/og-image.png",
+    "datePublished": "2026-06-09",
+    "dateModified": "2026-06-09",
+    "author": { "@type": "Person", "name": "Nitesh Kumar Singh", "url": "https://nkscoder.in/" },
+    "publisher": { "@type": "Person", "name": "Nitesh Kumar Singh", "url": "https://nkscoder.in/" },
+    "mainEntityOfPage": "https://nkscoder.in/blog/django-fintech-backend-architecture.html",
+    "articleSection": "Architecture",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo" aria-label="NKSCoder home">
+        <picture>
+          <source type="image/avif" srcset="../assets/brand/nkscoder-logo-72.avif" width="72" height="72">
+          <source type="image/webp" srcset="../assets/brand/nkscoder-logo-72.webp" width="72" height="72">
+          <img src="../assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder logo" class="logo-img" width="36" height="36" decoding="async">
+        </picture>
+        <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Blog</a></li>
+        <li><a href="../contact.html" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article class="container article">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · Architecture
+      </nav>
+
+      <header class="article-header">
+        <span class="blog-tag">Architecture · Django</span>
+        <h1>Django Backend Architecture for Fintech at Scale</h1>
+        <p class="article-meta">
+          By <strong>Nitesh Kumar Singh</strong> ·
+          <time datetime="2026-06-09">June 9, 2026</time>
+        </p>
+      </header>
+
+      <div class="article-content">
+        <p class="article-lead">
+          After 12+ years building Python backends for banks, investment firms, and payment platforms — from
+          <strong>JM Financial</strong> and <strong>Ujjivan Bank</strong> to <strong>Airtel Payments Bank</strong> —
+          I've refined a Django architecture that handles compliance, scale, and long-term maintainability.
+        </p>
+
+        <h2>Layered API Design</h2>
+        <p>
+          Fintech APIs need clear boundaries. I structure Django projects with thin views, service layers for business
+          logic, and repository-style data access. Django REST Framework serializers validate input strictly — financial
+          systems cannot afford silent type coercion on amounts or dates.
+        </p>
+        <ul>
+          <li><strong>Views</strong> — authentication, permissions, HTTP concerns only</li>
+          <li><strong>Services</strong> — transaction rules, fee calculations, state machines</li>
+          <li><strong>Models</strong> — data integrity, constraints, soft-delete patterns</li>
+          <li><strong>Tasks</strong> — Celery for anything exceeding 500ms</li>
+        </ul>
+
+        <h2>PostgreSQL for Financial Data</h2>
+        <p>PostgreSQL is the right default for fintech Django apps. Patterns I use consistently:</p>
+        <ul>
+          <li><code>NUMERIC</code> for money — never float</li>
+          <li>Partial indexes on active records (<code>WHERE deleted_at IS NULL</code>)</li>
+          <li>Composite indexes matching real query patterns (account_id + transaction_date)</li>
+          <li>JSONB for flexible metadata with GIN indexes where queried</li>
+          <li>Row-level audit tables — who changed what, when, from which IP</li>
+        </ul>
+
+        <h2>RBAC &amp; Compliance</h2>
+        <p>
+          Banking clients require role-based access control beyond Django's default permissions. I implement
+          organization-scoped roles, feature flags per client, and API-level permission classes that check both
+          user role and resource ownership. Every sensitive endpoint logs access for audit.
+        </p>
+
+        <h2>Integration Patterns</h2>
+        <p>Production fintech backends rarely stand alone. Across my projects I've integrated:</p>
+        <ul>
+          <li>Payment gateways — Razorpay, PayTM</li>
+          <li>Push notifications — FCM for mobile apps</li>
+          <li>Search — Algolia for e-commerce catalogs</li>
+          <li>Third-party KYC and credit bureau APIs</li>
+          <li>WhatsApp Business APIs for customer communication</li>
+        </ul>
+        <p>
+          Each integration gets a dedicated adapter module, circuit breaker retries, and webhook signature
+          verification. Never embed vendor SDK calls directly in views.
+        </p>
+
+        <h2>Microservices vs Monolith</h2>
+        <p>
+          For most fintech MVPs and mid-scale platforms, a well-structured Django monolith with Celery workers
+          outperforms premature microservices. I've split to microservices only when teams, deployment cadence, or
+          scaling profiles genuinely diverged — as with the Wave Resident App resident portal.
+        </p>
+
+        <div class="article-cta">
+          <p>Need a senior Django developer for your fintech platform?</p>
+          <a href="../contact.html" class="btn btn--primary">Contact Me</a>
+          <a href="bank-statement-analysis-ollama-gpu.html" class="btn btn--ghost">Read AI Case Study →</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nitesh Kumar Singh · <a href="https://nkscoder.in">nkscoder.in</a></p>
+      <div class="footer-links">
+        <a href="index.html">← Back to Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

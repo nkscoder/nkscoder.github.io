@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NKSCoder Blog — Nitesh Kumar Singh</title>
+    <link>https://nkscoder.in/blog/</link>
+    <description>Case studies and technical articles on Python, Django, fintech, Ollama AI, and backend engineering by Nitesh Kumar Singh.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Jun 2026 00:00:00 +0530</lastBuildDate>
+    <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Building AI Bank Statement Analysis with Ollama on NVIDIA GPU</title>
+      <link>https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html</guid>
+      <pubDate>Tue, 10 Jun 2026 00:00:00 +0530</pubDate>
+      <description>How we built a production bank statement analysis platform at Airtel Payments Bank using Ollama, NVIDIA GPU, Django, Celery, and Ray.</description>
+    </item>
+    <item>
+      <title>Django Backend Architecture for Fintech at Scale</title>
+      <link>https://nkscoder.in/blog/django-fintech-backend-architecture.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/django-fintech-backend-architecture.html</guid>
+      <pubDate>Mon, 09 Jun 2026 00:00:00 +0530</pubDate>
+      <description>REST API design, PostgreSQL patterns, and background job architecture for financial platforms — lessons from 12+ years in fintech.</description>
+    </item>
+    <item>
+      <title>Scaling Python Workers with Celery, RabbitMQ, and Ray</title>
+      <link>https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html</guid>
+      <pubDate>Sun, 08 Jun 2026 00:00:00 +0530</pubDate>
+      <description>Distributed processing patterns for high-volume PDF and CSV ingestion in banking and enterprise systems.</description>
+    </item>
+  </channel>
+</rss>

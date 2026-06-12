@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nkscoder.in/sitemap.xml
+
+# IndexNow key file: https://nkscoder.in/7fe4692b4ebeebafca3c1c8b941af099.txt
+# Google Search Console: verify at https://search.google.com/search-console
+#   → Add property nkscoder.in → DNS TXT (Cloudflare) or HTML meta tag in index.html

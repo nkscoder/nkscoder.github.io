@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Scaling Python with Celery, RabbitMQ &amp; Ray | NKSCoder</title>
+  <meta name="description" content="Distributed Python processing for banking workloads — Celery task design, RabbitMQ queues, Ray clusters, and idempotent PDF/CSV ingestion at scale.">
+  <meta name="keywords" content="Celery RabbitMQ, Ray Python, distributed processing, Python backend scaling, bank statement processing, Nitesh Kumar Singh, NKSCoder, background jobs">
+  <meta name="author" content="Nitesh Kumar Singh">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Scaling Python Workers with Celery, RabbitMQ, and Ray">
+  <meta property="og:description" content="Queue design, retries, and horizontal scaling for high-volume financial data ingestion.">
+  <meta property="og:image" content="https://nkscoder.in/og-image.png">
+  <meta property="og:url" content="https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nkscoder.in/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Scaling Python Workers with Celery, RabbitMQ, and Ray",
+    "description": "Distributed processing patterns for high-volume PDF and CSV ingestion in banking systems.",
+    "image": "https://nkscoder.in/og-image.png",
+    "datePublished": "2026-06-08",
+    "dateModified": "2026-06-08",
+    "author": { "@type": "Person", "name": "Nitesh Kumar Singh", "url": "https://nkscoder.in/" },
+    "publisher": { "@type": "Person", "name": "Nitesh Kumar Singh", "url": "https://nkscoder.in/" },
+    "mainEntityOfPage": "https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html",
+    "articleSection": "Distributed Systems",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo" aria-label="NKSCoder home">
+        <picture>
+          <source type="image/avif" srcset="../assets/brand/nkscoder-logo-72.avif" width="72" height="72">
+          <source type="image/webp" srcset="../assets/brand/nkscoder-logo-72.webp" width="72" height="72">
+          <img src="../assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder logo" class="logo-img" width="36" height="36" decoding="async">
+        </picture>
+        <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html" class="nav-link active">Blog</a></li>
+        <li><a href="../contact.html" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article class="container article">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · Distributed Systems
+      </nav>
+
+      <header class="article-header">
+        <span class="blog-tag">Python · Distributed Systems</span>
+        <h1>Scaling Python Workers with Celery, RabbitMQ, and Ray</h1>
+        <p class="article-meta">
+          By <strong>Nitesh Kumar Singh</strong> ·
+          <time datetime="2026-06-08">June 8, 2026</time>
+        </p>
+      </header>
+
+      <div class="article-content">
+        <p class="article-lead">
+          When a Django API starts receiving thousands of bank statements daily, synchronous request handling breaks
+          immediately. Here's how I design Python worker pipelines using <strong>Celery</strong>, <strong>RabbitMQ</strong>,
+          and <strong>Ray</strong> for production financial workloads.
+        </p>
+
+        <h2>Why Three Tools?</h2>
+        <p>Each solves a different scaling problem:</p>
+        <ul>
+          <li><strong>Celery</strong> — reliable async task execution with retries, scheduling, and result backends</li>
+          <li><strong>RabbitMQ</strong> — durable message broker with priority queues and dead-letter exchanges</li>
+          <li><strong>Ray</strong> — distributed compute for CPU-heavy Pandas operations across multiple cores/machines</li>
+        </ul>
+        <p>
+          Celery handles orchestration. RabbitMQ ensures no task is lost during deploys. Ray parallelizes the heavy
+          data crunching that would block a single worker for minutes.
+        </p>
+
+        <h2>Queue Design</h2>
+        <p>I separate queues by priority and resource profile:</p>
+        <ul>
+          <li><code>ingest.high</code> — small files, user-facing latency sensitive</li>
+          <li><code>ingest.bulk</code> — batch uploads, overnight processing</li>
+          <li><code>llm.gpu</code> — GPU-bound Ollama inference tasks (concurrency limited)</li>
+          <li><code>notify</code> — webhooks and email, isolated from ingest</li>
+        </ul>
+        <p>
+          Dead-letter queues capture failed tasks after max retries. Every DLQ message triggers an alert — silent
+          failures are unacceptable in banking pipelines.
+        </p>
+
+        <h2>Idempotency Is Non-Negotiable</h2>
+        <p>
+          Statements get re-uploaded. Workers restart mid-task. RabbitMQ delivers at-least-once. Every Celery task
+          must be idempotent: use a deterministic job ID derived from file hash + version, upsert instead of insert,
+          and store processing state in PostgreSQL before acknowledging the message.
+        </p>
+
+        <h2>Ray for Data Parallelism</h2>
+        <p>
+          A 50MB CSV with 200K rows cannot be processed in one Pandas call on a single core. Ray lets me partition
+          the dataframe, distribute chunks to workers, and aggregate results — often 4–8x faster on the same hardware.
+          Ray tasks are stateless; Celery triggers the Ray job and polls for completion.
+        </p>
+
+        <h2>Monitoring &amp; Operations</h2>
+        <ul>
+          <li>Flower for Celery worker visibility</li>
+          <li>RabbitMQ management UI for queue depth alerts</li>
+          <li>Structured JSON logging with correlation IDs across services</li>
+          <li>Graceful worker shutdown — finish current task before SIGTERM timeout</li>
+        </ul>
+
+        <div class="article-cta">
+          <p>Scaling a Python backend? Let's talk architecture.</p>
+          <a href="../contact.html" class="btn btn--primary">Get in Touch</a>
+          <a href="index.html" class="btn btn--ghost">More Articles</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nitesh Kumar Singh · <a href="https://nkscoder.in">nkscoder.in</a></p>
+      <div class="footer-links">
+        <a href="index.html">← Back to Blog</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
