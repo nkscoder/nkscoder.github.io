@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Nitesh Kumar Singh
+Nickname: NKSCoder (NKS Coder, NKS)
+Role: AI Developer, Python Coder, Senior Software Engineer
+Location: New Delhi, India
+Site: https://nkscoder.in
+GitHub: https://github.com/nkscoder
+LinkedIn: https://www.linkedin.com/in/nitesh-kumar-singh-897437a2/
+Email: nkscoder@gmail.com
+
+/* THANKS */
+GitHub Pages, Cloudflare
+
+/* KEYWORDS */
+Nitesh, Nitesh Kumar, Nitesh Kumar Singh, NKSCoder, AI developer, Python developer, Django developer, coder, fintech developer, Ollama, LLM developer

@@ -5,14 +5,16 @@
 <h1 align="center">NKSCoder</h1>
 
 <p align="center">
-  <strong>Official portfolio of Nitesh Kumar Singh</strong><br>
-  Senior Software Developer · 12+ Years Experience
+  <strong>Official portfolio of Nitesh Kumar Singh (NKSCoder)</strong><br>
+  AI Developer · Python Coder · Senior Software Engineer · 12+ Years
 </p>
 
 <p align="center">
-  <a href="https://nkscoder.in">🌐 Website</a> ·
-  <a href="https://github.com/nkscoder">👤 GitHub Profile</a> ·
+  <a href="https://nkscoder.in"><strong>🌐 nkscoder.in — Official Website</strong></a> ·
+  <a href="https://github.com/nkscoder">👤 GitHub: nkscoder</a> ·
+  <a href="https://www.linkedin.com/in/nitesh-kumar-singh-897437a2/">💼 LinkedIn: Nitesh Kumar Singh</a> ·
   <a href="https://nkscoder.in/contact.html">✉️ Contact</a> ·
+  <a href="https://nkscoder.in/blog/">📝 Blog</a> ·
   <a href="https://nkscoder.in/login/">🚀 Studio</a>
 </p>
 
@@ -28,7 +30,9 @@
 
 ## About
 
-Portfolio website featuring **Ollama AI on NVIDIA GPU**, **Django**, **PostgreSQL**, **AWS**, and **Linux** projects by [NKSCoder](https://github.com/nkscoder). Includes GPU-configured LLM bank statement analysis for Airtel Payments Bank.
+Portfolio of **Nitesh Kumar Singh** — known as **[NKSCoder](https://nkscoder.in)** (NKS Coder). AI developer, Python/Django coder, and senior software engineer. Site: **[nkscoder.in](https://nkscoder.in)** · GitHub: **[nkscoder](https://github.com/nkscoder)** · LinkedIn: **[Nitesh Kumar Singh](https://www.linkedin.com/in/nitesh-kumar-singh-897437a2/)**
+
+Features **Ollama AI on NVIDIA GPU**, **Django**, **PostgreSQL**, **AWS**, and fintech projects including bank statement analysis for Airtel Payments Bank.
 
 | | |
 |---|---|
