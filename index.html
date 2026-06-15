@@ -35,26 +35,28 @@
   <meta name="twitter:image:alt" content="NKSCoder portfolio preview">
 
   <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/brand/nkscoder-logo-72.avif" as="image" type="image/avif" media="(max-width: 768px)">
   <link rel="preload" href="assets/brand/nkscoder-logo-176.avif" as="image" type="image/avif" media="(min-width: 769px)">
   <style>
-    :root{--bg:#0a0a0f;--bg-card:#16161f;--border:rgba(255,255,255,.08);--text:#e8e8ed;--text-muted:#b4b4c8;--text-subtle:#9494a8;--accent:#6366f1;--accent-light:#818cf8;--accent-glow:rgba(99,102,241,.35);--ai-glow:rgba(34,211,238,.25);--radius-lg:20px;--font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--header-h:72px}
+    :root{--bg:#0a0a0f;--bg-elevated:#12121a;--bg-card:#16161f;--border:rgba(255,255,255,.08);--text:#e8e8ed;--text-muted:#b4b4c8;--text-subtle:#9494a8;--accent:#6366f1;--accent-light:#818cf8;--accent-glow:rgba(99,102,241,.35);--ai-accent:#22d3ee;--ai-glow:rgba(34,211,238,.25);--gradient:linear-gradient(135deg,#6366f1 0%,#22d3ee 50%,#a78bfa 100%);--radius:12px;--radius-lg:20px;--font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--header-h:72px}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:100%;overflow-x:clip}
     body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh;overflow-x:hidden}
     .container{width:min(1180px,94vw);margin-inline:auto}
     .bg-grid,.bg-glow{position:fixed;inset:0;pointer-events:none;z-index:0}
-    .bg-glow{border-radius:50%;filter:blur(100px)}
+    .bg-grid{background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+    .bg-glow{border-radius:50%;opacity:.9}
     .bg-glow--1{width:500px;height:500px;background:var(--accent-glow);top:-200px;right:-100px}
     .bg-glow--2{width:400px;height:400px;background:var(--ai-glow);bottom:10%;left:-150px}
-    .header{position:sticky;top:0;z-index:100;backdrop-filter:blur(16px);background:rgba(10,10,15,.75);border-bottom:1px solid var(--border)}
+    .header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,.92);border-bottom:1px solid var(--border)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:var(--header-h)}
     .logo{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-weight:600;font-size:1.1rem;color:var(--text);text-decoration:none}
     .logo-img{width:36px;height:36px;object-fit:contain}
     .logo-bracket{color:var(--accent-light)}
     .nav-links{display:flex;gap:2rem;list-style:none}
     .nav-link{color:var(--text-subtle);font-size:.9rem;font-weight:500;text-decoration:none}
-    .nav-toggle{display:none}
+    .nav-toggle{display:none;background:0;border:0;cursor:pointer;padding:4px}
     main{position:relative;z-index:1;overflow-x:clip}
     .hero{padding:2.5rem 0 3rem}
     .hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:2rem;align-items:center}
@@ -63,16 +65,38 @@
     .hero-brand-logo{width:88px;height:88px;object-fit:contain}
     .hero-brand-name{font-size:1.1rem;font-weight:700;color:var(--accent-light)}
     .hero-brand-tag{font-size:.72rem;color:var(--text-muted);margin-top:.35rem;text-transform:uppercase}
+    .hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);border-radius:999px;font-size:.8rem;font-weight:500;color:var(--ai-accent);margin-bottom:1.5rem}
+    .pulse{width:8px;height:8px;background:var(--ai-accent);border-radius:50%}
     .hero-brand-label{font-size:.85rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-light);margin-bottom:.35rem}
     .hero-title{font-size:clamp(2.5rem,6vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:.5rem}
     .hero-role{font-size:1.35rem;font-weight:600;color:var(--accent-light);margin-bottom:1rem}
-    @media(max-width:1100px){.nav-toggle{display:flex;flex-direction:column;gap:5px;background:0;border:0;cursor:pointer;padding:4px}.nav-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}.nav-links{display:none}}
-    @media(max-width:768px){:root{--header-h:64px}.container{width:min(1180px,92vw)}.hero{padding:1.75rem 0 2.25rem}.hero-grid{grid-template-columns:1fr;gap:1.75rem}.hero-visual{order:-1;max-width:100%}.hero-title{font-size:clamp(2rem,9vw,2.75rem)}.hero-role{font-size:1.1rem}.hero-brand-card{padding:1rem 1.15rem}}
+    .hero-tagline{font-size:1.05rem;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.65}
+    .tech-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+    .tech-pill{font-size:.8rem;padding:.4rem .9rem;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-muted)}
+    .tech-pill--ai{border-color:rgba(34,211,238,.35);color:var(--ai-accent);background:rgba(34,211,238,.06)}
+    .hero-contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.88rem;color:var(--text-muted);margin-bottom:1.5rem}
+    .hero-contact-row a{color:var(--accent-light);text-decoration:underline;text-underline-offset:.15em}
+    .hero-contact-row span{opacity:.4}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.5rem;font-size:.95rem;font-weight:600;border-radius:10px;text-decoration:none;border:none;cursor:pointer}
+    .btn--primary{background:var(--gradient);color:#fff}
+    .btn--ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+    .hero-quick-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.65rem}
+    .hero-stat-chip{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:.75rem .5rem;text-align:center}
+    .hero-stat-chip strong{display:block;font-size:.95rem;font-weight:700;color:var(--accent-light)}
+    .hero-stat-chip span{font-size:.68rem;color:var(--text-muted);text-transform:uppercase}
+    .terminal{background:var(--bg-elevated);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;width:100%}
+    .terminal-header{display:flex;align-items:center;gap:6px;padding:.75rem 1rem;background:rgba(0,0,0,.3);border-bottom:1px solid var(--border)}
+    .terminal-dot{width:12px;height:12px;border-radius:50%}
+    .terminal-dot--red{background:#ff5f57}.terminal-dot--yellow{background:#febc2e}.terminal-dot--green{background:#28c840}
+    .terminal-title{margin-left:.5rem;font-size:.75rem;color:var(--text-muted)}
+    .terminal-body{padding:1.25rem 1.5rem;font-size:.85rem;line-height:1.8}
+    @media(max-width:1100px){.nav-toggle{display:flex;flex-direction:column;gap:5px}.nav-toggle span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px}.nav-links{display:none}}
+    @media(max-width:768px){:root{--header-h:64px}.container{width:min(1180px,92vw)}.hero{padding:1.75rem 0 2.25rem}.hero-grid{grid-template-columns:1fr;gap:1.75rem}.hero-visual{order:-1;max-width:100%}.hero-title{font-size:clamp(2rem,9vw,2.75rem)}.hero-role{font-size:1.1rem}.hero-brand-card{padding:1rem 1.15rem}.hero-contact-row{flex-direction:column;align-items:flex-start;gap:.35rem}.hero-contact-row span{display:none}.hero-actions{display:grid;grid-template-columns:1fr;gap:.65rem}.hero-actions .btn{width:100%;min-height:44px}}
   </style>
   <link rel="stylesheet" href="assets/fonts/fonts-inter.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="assets/fonts/fonts-mono.css" media="print" onload="this.media='all'">
-  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="styles.css"></noscript>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
   <link rel="apple-touch-icon" href="/og-image.png">
 </head>
@@ -87,7 +111,7 @@
         <picture>
           <source type="image/avif" srcset="assets/brand/nkscoder-logo-72.avif" width="72" height="72">
           <source type="image/webp" srcset="assets/brand/nkscoder-logo-72.webp" width="72" height="72">
-          <img src="assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder logo — Nitesh Kumar Singh portfolio" class="logo-img" width="36" height="36" decoding="async">
+          <img src="assets/brand/nkscoder-logo-72.avif" alt="NKSCoder logo — Nitesh Kumar Singh portfolio" class="logo-img" width="36" height="36" decoding="async">
         </picture>
         <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
       </a>
