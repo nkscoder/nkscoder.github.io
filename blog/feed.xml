@@ -5,8 +5,15 @@
     <link>https://nkscoder.in/blog/</link>
     <description>NKSCoder blog by Nitesh Kumar Singh — AI developer, Python coder. Ollama AI, Django fintech, LLM &amp; backend engineering case studies.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Jun 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jun 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What Is Ray's Role in LLM Pipelines?</title>
+      <link>https://nkscoder.in/blog/ray-role-in-llm-pipelines.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/ray-role-in-llm-pipelines.html</guid>
+      <pubDate>Sun, 15 Jun 2026 00:00:00 +0530</pubDate>
+      <description>How Ray enables distributed preprocessing, batch LLM inference orchestration, and GPU worker scaling with Ollama, Django, and Celery.</description>
+    </item>
     <item>
       <title>Building AI Bank Statement Analysis with Ollama on NVIDIA GPU</title>
       <link>https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html</link>

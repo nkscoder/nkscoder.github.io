@@ -50,6 +50,8 @@ Features **Ollama AI on NVIDIA GPU**, **Django**, **PostgreSQL**, **AWS**, and f
 | Page | URL |
 |------|-----|
 | Home | [nkscoder.in](https://nkscoder.in) |
+| Blog | [nkscoder.in/blog/](https://nkscoder.in/blog/) |
+| Ray in LLM pipelines | [nkscoder.in/blog/ray-role-in-llm-pipelines.html](https://nkscoder.in/blog/ray-role-in-llm-pipelines.html) |
 | Contact | [nkscoder.in/contact.html](https://nkscoder.in/contact.html) |
 | Studio | [nkscoder.in/login/](https://nkscoder.in/login/) |
 
