@@ -8,6 +8,13 @@
     <lastBuildDate>Tue, 17 Jun 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Prompt Engineering in Simple Words</title>
+      <link>https://nkscoder.in/blog/prompt-engineering-simple-guide.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/prompt-engineering-simple-guide.html</guid>
+      <pubDate>Tue, 17 Jun 2026 00:00:00 +0530</pubDate>
+      <description>Learn prompt engineering in easy language with practical examples to get better AI answers for writing and coding.</description>
+    </item>
+    <item>
       <title>What Is an LLM? A Simple Guide for Beginners</title>
       <link>https://nkscoder.in/blog/what-is-llm-simple-guide.html</link>
       <guid isPermaLink="true">https://nkscoder.in/blog/what-is-llm-simple-guide.html</guid>
