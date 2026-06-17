@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>How AI Reads PDF Documents — Simple Explanation | NKSCoder</title>
+  <meta name="description" content="How AI reads and understands PDF files explained in simple words — text extraction, OCR, chunking, and LLM analysis. By Nitesh Kumar Singh.">
+  <meta name="keywords" content="AI read PDF, LLM document analysis, PDF text extraction, OCR AI, bank statement AI, Nitesh, Nitesh Kumar Singh, NKSCoder, NKS Coder, NKS, NKS AI, nkscoder, coder, AI coder, AI developer">
+  <meta name="author" content="Nitesh Kumar Singh">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://nkscoder.in/blog/how-ai-reads-pdf-documents.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="NKSCoder">
+  <meta property="og:url" content="https://nkscoder.in/blog/how-ai-reads-pdf-documents.html">
+  <meta property="og:title" content="How AI Reads PDF Documents">
+  <meta property="og:description" content="Step-by-step: how AI extracts text from PDFs and understands documents — explained simply.">
+  <meta property="og:image" content="https://nkscoder.in/assets/blog/ai-reads-documents.jpg">
+  <meta property="article:published_time" content="2026-06-17">
+  <meta property="article:author" content="Nitesh Kumar Singh">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How AI Reads PDF Documents">
+  <meta name="twitter:description" content="How AI extracts and understands text from PDF files — simple guide.">
+  <meta name="twitter:image" content="https://nkscoder.in/assets/blog/ai-reads-documents.jpg">
+  <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../styles.css" as="style">
+  <link rel="stylesheet" href="../assets/fonts/fonts-inter.css">
+  <link rel="stylesheet" href="../assets/fonts/fonts-mono.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How AI Reads PDF Documents — Simple Explanation",
+    "description": "A plain-English walkthrough of how AI extracts text from PDFs, handles scanned pages, and uses LLMs to understand documents.",
+    "image": "https://nkscoder.in/assets/blog/ai-reads-documents.jpg",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": {
+      "@type": "Person",
+      "name": "Nitesh Kumar Singh",
+      "url": "https://nkscoder.in/",
+      "jobTitle": "AI Developer & Senior Software Developer"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nitesh Kumar Singh",
+      "url": "https://nkscoder.in/"
+    },
+    "mainEntityOfPage": "https://nkscoder.in/blog/how-ai-reads-pdf-documents.html",
+    "keywords": ["AI PDF", "document AI", "OCR", "LLM", "text extraction", "NKSCoder", "NKS", "NKS AI", "Nitesh Kumar Singh", "coder"],
+    "articleSection": "AI Basics",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo" aria-label="NKSCoder home">
+        <picture>
+          <source type="image/avif" srcset="../assets/brand/nkscoder-logo-72.avif" width="72" height="72">
+          <source type="image/webp" srcset="../assets/brand/nkscoder-logo-72.webp" width="72" height="72">
+          <img src="../assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder logo" class="logo-img" width="36" height="36" decoding="async">
+        </picture>
+        <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="/blog/" class="nav-link active">Blog</a></li>
+        <li><a href="/login/" class="nav-link">Studio</a></li>
+        <li><a href="/contact.html" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article class="container article">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · AI Basics
+      </nav>
+
+      <header class="article-header">
+        <span class="blog-tag">AI · Documents · PDF</span>
+        <h1>How AI Reads PDF Documents</h1>
+        <p class="article-meta">
+          By <strong>Nitesh Kumar Singh</strong> · AI Developer ·
+          <time datetime="2026-06-17">June 17, 2026</time>
+        </p>
+      </header>
+
+      <figure class="article-hero-img">
+        <picture>
+          <source type="image/avif" srcset="../assets/blog/ai-reads-documents.avif">
+          <source type="image/webp" srcset="../assets/blog/ai-reads-documents.webp">
+          <img src="../assets/blog/ai-reads-documents.jpg" alt="AI reading and analyzing a PDF document" width="640" height="426" decoding="async">
+        </picture>
+      </figure>
+
+      <div class="article-content">
+        <p class="article-lead">
+          You upload a 40-page bank statement as a PDF and ask AI: "What are the top spending categories?"
+          It feels like magic. But behind the scenes, several clear steps happen. Here is how AI actually
+          reads a PDF — explained in simple words.
+        </p>
+
+        <h2>Step 1: Get the Text Out of the PDF</h2>
+        <p>
+          A PDF is not plain text. It can contain typed text, scanned images, tables, and mixed layouts.
+          The first job is <strong>text extraction</strong> — pulling readable words from the file.
+        </p>
+        <ul>
+          <li><strong>Digital PDFs</strong> (typed text) — tools like PyPDF or pdfplumber copy the text directly. Fast and accurate.</li>
+          <li><strong>Scanned PDFs</strong> (photos of pages) — need <strong>OCR</strong> (Optical Character Recognition). The computer "looks" at the image and guesses each letter, like reading a photo of a page.</li>
+          <li><strong>Tables</strong> — hardest part. Rows and columns must be parsed carefully so amounts do not get mixed up.</li>
+        </ul>
+        <p>
+          If extraction is wrong, the AI will be wrong too. Garbage in, garbage out.
+        </p>
+
+        <h2>Step 2: Clean and Organize the Text</h2>
+        <p>Raw extracted text is messy. You might get:</p>
+        <ul>
+          <li>Broken lines and random spaces</li>
+          <li>Headers repeated on every page</li>
+          <li>Page numbers mixed into transaction rows</li>
+          <li>Currency symbols separated from amounts</li>
+        </ul>
+        <p>
+          Cleaning scripts remove noise, fix date formats, and merge lines that belong together.
+          For bank statements, this step is critical — a misplaced decimal can change a risk score.
+        </p>
+
+        <h2>Step 3: Split Into Chunks</h2>
+        <p>
+          LLMs have a <strong>context limit</strong> — they can only read a certain amount of text at once
+          (roughly 4–128 pages depending on the model). A long PDF must be split into smaller
+          <strong>chunks</strong>.
+        </p>
+        <p>Common chunking strategies:</p>
+        <ul>
+          <li>Split by page (one chunk per page)</li>
+          <li>Split by section (transactions, summary, fees)</li>
+          <li>Split by token count (e.g. 2,000 words per chunk)</li>
+        </ul>
+        <p>
+          Each chunk is processed separately, then results are combined at the end.
+        </p>
+
+        <h2>Step 4: Send to the LLM With a Clear Prompt</h2>
+        <p>
+          The AI does not "see" the PDF file directly. It receives <strong>text plus instructions</strong>
+          (a prompt). For example:
+        </p>
+        <p><em>"Read these transactions. Return JSON with date, description, amount, and category for each row."</em></p>
+        <p>
+          A good prompt tells the AI exactly what format you want. Vague prompts like "analyze this"
+          give vague answers.
+        </p>
+
+        <h2>Step 5: AI Understands and Responds</h2>
+        <p>
+          The <a href="what-is-llm-simple-guide.html">LLM</a> reads the chunk, finds patterns (merchant names,
+          amounts, dates), and writes a structured answer. For bank statements, it might:
+        </p>
+        <ul>
+          <li>Categorize spending (food, rent, utilities)</li>
+          <li>Flag unusual large transactions</li>
+          <li>Summarize monthly income vs expenses</li>
+          <li>Extract party names for loan underwriting</li>
+        </ul>
+
+        <h2>Step 6: Merge Results From All Chunks</h2>
+        <p>
+          If the PDF was split into 20 chunks, you get 20 partial answers. A merge step combines them:
+          remove duplicates, sort by date, and produce one final report or database record.
+        </p>
+        <p>
+          In production systems, tools like Celery handle the job queue and Ray parallelizes chunks across
+          multiple CPU cores — so a 100-page PDF does not take an hour.
+        </p>
+
+        <h2>Real Example: Bank Statement Analysis</h2>
+        <p>Here is the flow we use in fintech production:</p>
+        <ol>
+          <li>User uploads PDF via web app</li>
+          <li>System extracts text (OCR if scanned)</li>
+          <li>Text is cleaned and split into chunks</li>
+          <li>Each chunk goes to Ollama (local AI on GPU)</li>
+          <li>AI returns JSON with transactions and categories</li>
+          <li>Results merged and saved to database</li>
+          <li>User sees a summary dashboard</li>
+        </ol>
+        <p>
+          The AI part is only steps 4–5. Most engineering effort goes into steps 1–3 and 6 — making sure
+          the text going into the LLM is clean and complete.
+        </p>
+
+        <h2>Common Problems and Fixes</h2>
+        <ul>
+          <li><strong>Scanned PDFs look blurry</strong> — use better OCR or ask users for digital PDFs</li>
+          <li><strong>Tables break apart</strong> — use specialized table extraction libraries</li>
+          <li><strong>AI invents transactions</strong> — validate output against raw extracted text</li>
+          <li><strong>Too slow</strong> — process chunks in parallel with Ray or multiple GPU workers</li>
+          <li><strong>Wrong categories</strong> — improve the prompt with examples (few-shot prompting)</li>
+        </ul>
+
+        <h2>Key Takeaways</h2>
+        <ol>
+          <li>AI does not read PDFs directly — text must be extracted first.</li>
+          <li>OCR is needed for scanned documents; digital PDFs are easier.</li>
+          <li>Long documents are split into chunks because of LLM size limits.</li>
+          <li>Clear prompts produce clear, structured answers.</li>
+          <li>Most errors come from bad text extraction, not from the AI itself.</li>
+        </ol>
+
+        <div class="article-cta">
+          <p>Need AI document processing for PDFs, statements, or reports? I build these pipelines in production.</p>
+          <a href="/contact.html" class="btn btn--primary">Get in Touch</a>
+          <a href="bank-statement-analysis-ollama-gpu.html" class="btn btn--ghost">Bank Statement Case Study</a>
+          <a href="what-is-ollama-local-ai.html" class="btn btn--ghost">What Is Ollama?</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nitesh Kumar Singh · <a href="https://nkscoder.in">nkscoder.in</a></p>
+      <div class="footer-links">
+        <a href="/blog/">← Back to Blog</a>
+        <a href="/login/">Studio</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>

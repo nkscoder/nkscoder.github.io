@@ -3,10 +3,38 @@
   <channel>
     <title>NKSCoder Blog — Nitesh Kumar Singh</title>
     <link>https://nkscoder.in/blog/</link>
-    <description>NKSCoder blog by Nitesh Kumar Singh — AI developer, Python coder. Ollama AI, Django fintech, LLM &amp; backend engineering case studies.</description>
+    <description>NKSCoder blog by Nitesh Kumar Singh (NKS Coder, NKS AI) — AI developer, Python coder. Ollama AI, LLM guides, Django fintech &amp; backend case studies at nkscoder.in.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Jun 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 17 Jun 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What Is an LLM? A Simple Guide for Beginners</title>
+      <link>https://nkscoder.in/blog/what-is-llm-simple-guide.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/what-is-llm-simple-guide.html</guid>
+      <pubDate>Tue, 17 Jun 2026 00:00:00 +0530</pubDate>
+      <description>Large Language Models explained in plain English — how ChatGPT-style AI works and its limits.</description>
+    </item>
+    <item>
+      <title>What Is Ollama? Run AI on Your Own Computer</title>
+      <link>https://nkscoder.in/blog/what-is-ollama-local-ai.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/what-is-ollama-local-ai.html</guid>
+      <pubDate>Tue, 17 Jun 2026 00:00:00 +0530</pubDate>
+      <description>Run Llama and other open-source AI models locally with Ollama — private and no API bills.</description>
+    </item>
+    <item>
+      <title>How AI Reads PDF Documents</title>
+      <link>https://nkscoder.in/blog/how-ai-reads-pdf-documents.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/how-ai-reads-pdf-documents.html</guid>
+      <pubDate>Tue, 17 Jun 2026 00:00:00 +0530</pubDate>
+      <description>Text extraction, OCR, chunking, and LLM analysis — how AI understands PDFs step by step.</description>
+    </item>
+    <item>
+      <title>When Should You Use AI in Your Project?</title>
+      <link>https://nkscoder.in/blog/when-to-use-ai-in-projects.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/when-to-use-ai-in-projects.html</guid>
+      <pubDate>Tue, 17 Jun 2026 00:00:00 +0530</pubDate>
+      <description>Good vs bad AI use cases and a practical checklist for adding AI to software projects.</description>
+    </item>
     <item>
       <title>What Is Ray's Role in LLM Pipelines?</title>
       <link>https://nkscoder.in/blog/ray-role-in-llm-pipelines.html</link>

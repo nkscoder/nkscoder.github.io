@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>When Should You Use AI in Your Project? | NKSCoder</title>
+  <meta name="description" content="When to use AI and LLMs in software projects — practical guide on good use cases, bad use cases, and how to decide. By Nitesh Kumar Singh.">
+  <meta name="keywords" content="when to use AI, AI in projects, LLM use cases, should I use AI, Nitesh, Nitesh Kumar Singh, NKSCoder, NKS Coder, NKS, NKS AI, nkscoder, coder, AI coder, AI developer, Python coder">
+  <meta name="author" content="Nitesh Kumar Singh">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://nkscoder.in/blog/when-to-use-ai-in-projects.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="NKSCoder">
+  <meta property="og:url" content="https://nkscoder.in/blog/when-to-use-ai-in-projects.html">
+  <meta property="og:title" content="When Should You Use AI in Your Project?">
+  <meta property="og:description" content="Practical guide: when AI helps, when it hurts, and how to decide for your software project.">
+  <meta property="og:image" content="https://nkscoder.in/assets/blog/when-use-ai.jpg">
+  <meta property="article:published_time" content="2026-06-17">
+  <meta property="article:author" content="Nitesh Kumar Singh">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="When to Use AI in Projects">
+  <meta name="twitter:description" content="Good and bad use cases for AI in software — practical decision guide.">
+  <meta name="twitter:image" content="https://nkscoder.in/assets/blog/when-use-ai.jpg">
+  <link rel="preload" href="../assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../styles.css" as="style">
+  <link rel="stylesheet" href="../assets/fonts/fonts-inter.css">
+  <link rel="stylesheet" href="../assets/fonts/fonts-mono.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "When Should You Use AI in Your Project?",
+    "description": "A practical guide to deciding when AI and LLMs add real value in software projects — and when traditional code is better.",
+    "image": "https://nkscoder.in/assets/blog/when-use-ai.jpg",
+    "datePublished": "2026-06-17",
+    "dateModified": "2026-06-17",
+    "author": {
+      "@type": "Person",
+      "name": "Nitesh Kumar Singh",
+      "url": "https://nkscoder.in/",
+      "jobTitle": "AI Developer & Senior Software Developer"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Nitesh Kumar Singh",
+      "url": "https://nkscoder.in/"
+    },
+    "mainEntityOfPage": "https://nkscoder.in/blog/when-to-use-ai-in-projects.html",
+    "keywords": ["AI use cases", "LLM projects", "when to use AI", "software development", "NKSCoder", "NKS", "NKS AI", "Nitesh Kumar Singh", "coder"],
+    "articleSection": "AI Basics",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo" aria-label="NKSCoder home">
+        <picture>
+          <source type="image/avif" srcset="../assets/brand/nkscoder-logo-72.avif" width="72" height="72">
+          <source type="image/webp" srcset="../assets/brand/nkscoder-logo-72.webp" width="72" height="72">
+          <img src="../assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder logo" class="logo-img" width="36" height="36" decoding="async">
+        </picture>
+        <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="/blog/" class="nav-link active">Blog</a></li>
+        <li><a href="/login/" class="nav-link">Studio</a></li>
+        <li><a href="/contact.html" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article class="container article">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · AI Basics
+      </nav>
+
+      <header class="article-header">
+        <span class="blog-tag">AI · Decision Guide</span>
+        <h1>When Should You Use AI in Your Project?</h1>
+        <p class="article-meta">
+          By <strong>Nitesh Kumar Singh</strong> · AI Developer ·
+          <time datetime="2026-06-17">June 17, 2026</time>
+        </p>
+      </header>
+
+      <figure class="article-hero-img">
+        <picture>
+          <source type="image/avif" srcset="../assets/blog/when-use-ai.avif">
+          <source type="image/webp" srcset="../assets/blog/when-use-ai.webp">
+          <img src="../assets/blog/when-use-ai.jpg" alt="Decision guide for when to use AI in software projects" width="640" height="426" decoding="async">
+        </picture>
+      </figure>
+
+      <div class="article-content">
+        <p class="article-lead">
+          "We should add AI to our app" is a popular idea in 2026. Sometimes it is the right move.
+          Sometimes it creates more problems than it solves. After building AI systems in banking and
+          fintech, here is a simple framework to help you decide.
+        </p>
+
+        <h2>Use AI When the Problem Is Messy and Text-Based</h2>
+        <p>AI shines when data is unstructured — meaning it does not fit neatly into rows and columns:</p>
+        <ul>
+          <li><strong>Reading documents</strong> — PDFs, contracts, invoices, bank statements</li>
+          <li><strong>Understanding language</strong> — customer emails, support tickets, feedback</li>
+          <li><strong>Summarizing long content</strong> — reports, meeting notes, research papers</li>
+          <li><strong>Classifying free text</strong> — tagging complaints, sorting job applications</li>
+          <li><strong>Drafting content</strong> — email replies, product descriptions, code comments</li>
+          <li><strong>Translating</strong> — multilingual customer support</li>
+        </ul>
+        <p>
+          If humans currently read something and make a judgment call, AI might help automate part of that work.
+        </p>
+
+        <h2>Do NOT Use AI When Rules Are Fixed and Exact</h2>
+        <p>Traditional code is better when:</p>
+        <ul>
+          <li><strong>Math must be exact</strong> — loan interest, tax calculation, account balance</li>
+          <li><strong>Rules never change</strong> — "if PIN wrong 3 times, lock account"</li>
+          <li><strong>Zero tolerance for errors</strong> — payment authorization, fund transfers</li>
+          <li><strong>Speed and cost matter at scale</strong> — a regex check is 1000× cheaper than an LLM call</li>
+          <li><strong>You need 100% reproducibility</strong> — same input must always give same output</li>
+        </ul>
+        <p>
+          Never let an LLM decide whether to move money. Use code for that. Use AI to read the document
+          that <em>triggers</em> the workflow.
+        </p>
+
+        <h2>Good AI Use Cases (Real Examples)</h2>
+        <ul>
+          <li><strong>Bank statement analysis</strong> — extract transactions, categorize spending (what I built at Airtel Payments Bank)</li>
+          <li><strong>Invoice processing</strong> — pull vendor name, amount, and date from scanned bills</li>
+          <li><strong>Customer support bot</strong> — answer FAQs from your knowledge base</li>
+          <li><strong>Code review assistant</strong> — suggest improvements, find bugs in pull requests</li>
+          <li><strong>Search over documents</strong> — "find all contracts mentioning penalty clauses"</li>
+          <li><strong>Content generation</strong> — first drafts for marketing copy (human reviews before publish)</li>
+        </ul>
+
+        <h2>Bad AI Use Cases (Avoid These)</h2>
+        <ul>
+          <li><strong>Replacing your database</strong> — AI does not store data reliably</li>
+          <li><strong>Real-time trading decisions</strong> — too slow and unpredictable</li>
+          <li><strong>Authentication</strong> — never use AI to verify identity or passwords</li>
+          <li><strong>Legal or medical final decisions</strong> — AI assists, humans decide</li>
+          <li><strong>Adding AI because competitors did</strong> — no clear user problem solved</li>
+          <li><strong>Simple form validation</strong> — "is this a valid email?" does not need GPT</li>
+        </ul>
+
+        <h2>A Simple Decision Checklist</h2>
+        <p>Ask these five questions before adding AI:</p>
+        <ol>
+          <li><strong>Is the input unstructured text or images?</strong> If yes → AI might help.</li>
+          <li><strong>Would a human need to read and interpret it?</strong> If yes → good AI candidate.</li>
+          <li><strong>Is a wrong answer dangerous?</strong> If yes → add human review or skip AI.</li>
+          <li><strong>Can regular code solve it with rules?</strong> If yes → use code, not AI.</li>
+          <li><strong>Is the volume high enough to justify cost?</strong> If only 10 docs/day → maybe manual is fine.</li>
+        </ol>
+
+        <h2>Cloud AI vs Local AI — Which to Pick?</h2>
+        <ul>
+          <li><strong>Cloud (OpenAI, Claude, Gemini)</strong> — faster to start, smarter models, but data leaves your server and you pay per call</li>
+          <li><strong>Local (<a href="what-is-ollama-local-ai.html">Ollama</a> on your server)</strong> — more setup, but private and no per-message cost. Best for banks, healthcare, and enterprise</li>
+        </ul>
+        <p>
+          Start with cloud for prototypes. Move to local when privacy, volume, or cost demands it.
+        </p>
+
+        <h2>Start Small — The Right Way to Add AI</h2>
+        <ol>
+          <li><strong>Pick one painful manual task</strong> — e.g. "staff spends 2 hours reading each loan application"</li>
+          <li><strong>Build a prototype</strong> — feed 10 sample documents to an LLM, check quality</li>
+          <li><strong>Measure accuracy</strong> — compare AI output vs human output on 100 samples</li>
+          <li><strong>Add human review</strong> — let AI draft, human approve (human-in-the-loop)</li>
+          <li><strong>Scale gradually</strong> — automate more only when accuracy is proven</li>
+        </ol>
+        <p>
+          Do not launch AI directly to customers on day one. Always have a fallback when AI is unsure.
+        </p>
+
+        <h2>AI + Traditional Code = Best Results</h2>
+        <p>
+          The strongest production systems combine both. In our bank statement platform:
+        </p>
+        <ul>
+          <li><strong>Python code</strong> — validates file type, checks file size, stores in S3</li>
+          <li><strong>AI (Ollama)</strong> — reads transactions and suggests categories</li>
+          <li><strong>Python code</strong> — validates amounts, checks totals, flags anomalies</li>
+          <li><strong>Database rules</strong> — enforces business logic before saving</li>
+        </ul>
+        <p>
+          AI handles the fuzzy part. Code handles the exact part. That is the pattern that works in production.
+        </p>
+
+        <h2>Key Takeaways</h2>
+        <ol>
+          <li>Use AI for messy, text-heavy tasks humans currently do by hand.</li>
+          <li>Do not use AI where math, security, or exact rules matter.</li>
+          <li>Always validate AI output — never trust it blindly.</li>
+          <li>Start with a small prototype and measure accuracy before scaling.</li>
+          <li>Combine AI with traditional code for the best results.</li>
+        </ol>
+
+        <div class="article-cta">
+          <p>Not sure if AI fits your project? I help teams make the right call and ship production systems.</p>
+          <a href="/contact.html" class="btn btn--primary">Get in Touch</a>
+          <a href="what-is-llm-simple-guide.html" class="btn btn--ghost">What Is an LLM?</a>
+          <a href="how-ai-reads-pdf-documents.html" class="btn btn--ghost">How AI Reads PDFs</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nitesh Kumar Singh · <a href="https://nkscoder.in">nkscoder.in</a></p>
+      <div class="footer-links">
+        <a href="/blog/">← Back to Blog</a>
+        <a href="/login/">Studio</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js" defer></script>
+</body>
+</html>
