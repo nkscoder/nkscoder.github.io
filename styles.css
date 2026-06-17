@@ -1247,7 +1247,7 @@ main {
 }
 
 .blog-grid--listing {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .blog-card--featured .blog-card-link {
@@ -1324,7 +1324,7 @@ main {
 
 .blog-grid--home {
   margin-top: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .blog-grid--home .blog-card h3 {
