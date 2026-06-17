@@ -12,4 +12,4 @@ Email: nkscoder@gmail.com
 GitHub Pages, Cloudflare
 
 /* KEYWORDS */
-Nitesh, Nitesh Kumar, Nitesh Kumar Singh, NKSCoder, NKS Coder, NKS, NKS AI, nkscoder, nkscoder.in, coder, AI coder, AI developer, Python developer, Django developer, fintech developer, Ollama, LLM developer
+Nitesh, Nitesh Kumar, Nitesh Kumar Singh, NKSCoder, NKS Coder, NKS, NKS AI, nkscoder, nkscoder.in, coder, AI coder, AI developer, Python developer, Django developer, fintech developer, Ollama, LLM developer, prompt engineering, AI blog
