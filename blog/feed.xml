@@ -12,14 +12,14 @@
       <link>https://nkscoder.in/blog/bank-statement-nbfc-part-1-platform-parsing.html</link>
       <guid isPermaLink="true">https://nkscoder.in/blog/bank-statement-nbfc-part-1-platform-parsing.html</guid>
       <pubDate>Thu, 19 Jun 2026 00:00:00 +0530</pubDate>
-      <description>Case study Part 1 — FastAPI backend, flexible Indian bank PDF/Excel parsing, bulk upload, and categorization for NBFCs.</description>
+      <description>Case study Part 1 — NBFC bank statement analysis: FastAPI backend, flexible HDFC/SBI/ICICI PDF and Excel parsing, bulk upload, salary and EMI categorization for loan underwriting.</description>
     </item>
     <item>
       <title>NBFC Platform Part 2: LangGraph AI, Chat &amp; Reports</title>
       <link>https://nkscoder.in/blog/bank-statement-nbfc-part-2-ai-reports.html</link>
       <guid isPermaLink="true">https://nkscoder.in/blog/bank-statement-nbfc-part-2-ai-reports.html</guid>
       <pubDate>Thu, 19 Jun 2026 00:00:00 +0530</pubDate>
-      <description>Case study Part 2 — LangGraph agents, Hinglish RAG chat, multi-statement analysis, and NBFC credit assessment PDF reports.</description>
+      <description>Case study Part 2 — AI bank statement analysis for NBFCs: LangGraph fraud/EMI/salary agents, Hinglish RAG chat, multi-statement underwriting, NBFC credit assessment PDF reports.</description>
     </item>
     <item>
       <title>Prompt Engineering in Simple Words</title>
