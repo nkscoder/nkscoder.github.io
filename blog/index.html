@@ -66,17 +66,18 @@
         "@type": "ItemList",
         "name": "NKSCoder Blog Articles",
         "description": "All blog posts by Nitesh Kumar Singh (NKSCoder, NKS AI) on AI, LLM, Python, and fintech.",
-        "numberOfItems": 9,
+        "numberOfItems": 10,
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://nkscoder.in/blog/prompt-engineering-simple-guide.html", "name": "Prompt Engineering in Simple Words" },
-          { "@type": "ListItem", "position": 2, "url": "https://nkscoder.in/blog/what-is-llm-simple-guide.html", "name": "What Is an LLM? A Simple Guide for Beginners" },
-          { "@type": "ListItem", "position": 3, "url": "https://nkscoder.in/blog/what-is-ollama-local-ai.html", "name": "What Is Ollama? Run AI on Your Own Computer" },
-          { "@type": "ListItem", "position": 4, "url": "https://nkscoder.in/blog/how-ai-reads-pdf-documents.html", "name": "How AI Reads PDF Documents" },
-          { "@type": "ListItem", "position": 5, "url": "https://nkscoder.in/blog/when-to-use-ai-in-projects.html", "name": "When Should You Use AI in Your Project?" },
-          { "@type": "ListItem", "position": 6, "url": "https://nkscoder.in/blog/ray-role-in-llm-pipelines.html", "name": "What Is Ray's Role in LLM Pipelines?" },
-          { "@type": "ListItem", "position": 7, "url": "https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html", "name": "Building AI Bank Statement Analysis with Ollama on NVIDIA GPU" },
-          { "@type": "ListItem", "position": 8, "url": "https://nkscoder.in/blog/django-fintech-backend-architecture.html", "name": "Django Backend Architecture for Fintech at Scale" },
-          { "@type": "ListItem", "position": 9, "url": "https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html", "name": "Scaling Python Workers with Celery, RabbitMQ, and Ray" }
+          { "@type": "ListItem", "position": 1, "url": "https://nkscoder.in/blog/bank-statement-analysis-fastapi-langgraph.html", "name": "NBFC Bank Statement Analysis with FastAPI & LangGraph" },
+          { "@type": "ListItem", "position": 2, "url": "https://nkscoder.in/blog/prompt-engineering-simple-guide.html", "name": "Prompt Engineering in Simple Words" },
+          { "@type": "ListItem", "position": 3, "url": "https://nkscoder.in/blog/what-is-llm-simple-guide.html", "name": "What Is an LLM? A Simple Guide for Beginners" },
+          { "@type": "ListItem", "position": 4, "url": "https://nkscoder.in/blog/what-is-ollama-local-ai.html", "name": "What Is Ollama? Run AI on Your Own Computer" },
+          { "@type": "ListItem", "position": 5, "url": "https://nkscoder.in/blog/how-ai-reads-pdf-documents.html", "name": "How AI Reads PDF Documents" },
+          { "@type": "ListItem", "position": 6, "url": "https://nkscoder.in/blog/when-to-use-ai-in-projects.html", "name": "When Should You Use AI in Your Project?" },
+          { "@type": "ListItem", "position": 7, "url": "https://nkscoder.in/blog/ray-role-in-llm-pipelines.html", "name": "What Is Ray's Role in LLM Pipelines?" },
+          { "@type": "ListItem", "position": 8, "url": "https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html", "name": "Building AI Bank Statement Analysis with Ollama on NVIDIA GPU" },
+          { "@type": "ListItem", "position": 9, "url": "https://nkscoder.in/blog/django-fintech-backend-architecture.html", "name": "Django Backend Architecture for Fintech at Scale" },
+          { "@type": "ListItem", "position": 10, "url": "https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html", "name": "Scaling Python Workers with Celery, RabbitMQ, and Ray" }
         ]
       }
     ]
@@ -122,6 +123,25 @@
 
       <div class="blog-grid blog-grid--listing">
         <article class="blog-card blog-card--featured">
+          <a href="bank-statement-analysis-fastapi-langgraph.html" class="blog-card-link">
+            <div class="blog-card-thumb">
+              <picture>
+                <source type="image/avif" srcset="../assets/projects/bank-statement.avif">
+                <source type="image/webp" srcset="../assets/projects/bank-statement.webp">
+                <img src="../assets/projects/bank-statement.jpg" alt="NBFC bank statement analysis with FastAPI and LangGraph" loading="lazy" width="640" height="426" decoding="async">
+              </picture>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Case Study · Fintech · Open Source</span>
+              <h2>NBFC Bank Statement Analysis with FastAPI &amp; LangGraph</h2>
+              <p>Multi-bank parsing, LangGraph AI agents, Hinglish chat assistant, bulk upload, and NBFC credit assessment PDF reports — full open-source build.</p>
+              <time class="blog-date" datetime="2026-06-18">June 18, 2026</time>
+              <span class="blog-read-more">Read case study →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="blog-card">
           <a href="bank-statement-analysis-ollama-gpu.html" class="blog-card-link">
             <div class="blog-card-thumb">
               <picture>
@@ -131,7 +151,7 @@
               </picture>
             </div>
             <div class="blog-card-body">
-              <span class="blog-tag">Case Study · Fintech · AI</span>
+              <span class="blog-tag">Case Study · Production · GPU</span>
               <h2>Building AI Bank Statement Analysis with Ollama on NVIDIA GPU</h2>
               <p>Local LLM inference, GPU batch processing, and intelligent parsing for Airtel Payments Bank — Django, Celery, Ray, and PostgreSQL in production.</p>
               <time class="blog-date" datetime="2026-06-10">June 10, 2026</time>
