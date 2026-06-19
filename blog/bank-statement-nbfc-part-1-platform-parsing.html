@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>NBFC Bank Statement Platform — Part 1: Architecture &amp; Parsing | NKSCoder</title>
+  <meta name="description" content="Case study Part 1: NBFC bank statement platform — FastAPI backend, PostgreSQL, flexible Indian bank PDF/Excel parsing, bulk upload, and transaction categorization by Nitesh Kumar Singh.">
+  <meta name="keywords" content="bank statement parsing, FastAPI, NBFC, Indian banks PDF Excel, fintech, NKSCoder, Nitesh Kumar Singh">
+  <meta name="author" content="Nitesh Kumar Singh">
+  <link rel="canonical" href="https://nkscoder.in/blog/bank-statement-nbfc-part-1-platform-parsing.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nkscoder.in/blog/bank-statement-nbfc-part-1-platform-parsing.html">
+  <meta property="og:title" content="NBFC Bank Statement Platform — Part 1: Architecture &amp; Parsing">
+  <meta property="og:description" content="How I built flexible multi-bank statement parsing for NBFCs with FastAPI and PostgreSQL.">
+  <meta property="og:image" content="https://nkscoder.in/assets/blog/bank-statement-nbfc-part-1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nkscoder.in/assets/blog/bank-statement-nbfc-part-1.jpg">
+  <link rel="stylesheet" href="../assets/fonts/fonts-inter.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo" aria-label="NKSCoder home">
+        <img src="../assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder" class="logo-img" width="36" height="36">
+        <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="/blog/" class="nav-link active">Blog</a></li>
+        <li><a href="/contact.html" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article class="container article">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · Case Study · Part 1 of 2
+      </nav>
+
+      <header class="article-header">
+        <span class="blog-tag">Case Study · Part 1 · Platform &amp; Parsing</span>
+        <h1>NBFC Bank Statement Platform — Part 1: Architecture, Upload &amp; Multi-Bank Parsing</h1>
+        <p class="article-meta">
+          By <strong>Nitesh Kumar Singh</strong> · NKSCoder ·
+          <time datetime="2026-06-19">June 19, 2026</time>
+          · <a href="bank-statement-nbfc-part-2-ai-reports.html">Read Part 2 →</a>
+        </p>
+      </header>
+
+      <figure class="article-hero-img">
+        <picture>
+          <source type="image/avif" srcset="../assets/blog/bank-statement-nbfc-part-1.avif">
+          <source type="image/webp" srcset="../assets/blog/bank-statement-nbfc-part-1.webp">
+          <img src="../assets/blog/bank-statement-nbfc-part-1.jpg" alt="Part 1 — NBFC bank statement upload and parsing platform" width="640" height="426" decoding="async">
+        </picture>
+      </figure>
+
+      <div class="article-content">
+        <p class="article-lead">
+          <strong>Part 1 of 2.</strong> This case study covers the foundation of an NBFC bank statement analysis
+          platform I built — the problem loan agents face, system architecture, FastAPI backend, PostgreSQL data
+          model, and the flexible parsing engine that handles messy Indian bank PDFs and Excel exports without
+          hardcoded headers.
+        </p>
+        <p><strong>Part 2 covers:</strong> LangGraph AI agents, Hinglish chat, and NBFC credit assessment PDF reports.
+          <a href="bank-statement-nbfc-part-2-ai-reports.html">Continue to Part 2 →</a>
+        </p>
+
+        <h2>The NBFC Problem</h2>
+        <p>
+          Every day, loan agents and NBFC underwriters receive bank statements as PDF downloads or Excel exports.
+          Before any loan decision, someone must manually answer:
+        </p>
+        <ul>
+          <li>Is salary coming regularly? How much per month?</li>
+          <li>What EMIs or loan payments are already running?</li>
+          <li>Any cheque bounces or return transactions?</li>
+          <li>What is the net cash flow and spending pattern?</li>
+          <li>Can this customer afford another EMI?</li>
+        </ul>
+        <p>
+          Doing this by hand for 50–200 transactions per statement takes 30–60 minutes. Multiply by multiple
+          accounts and months of data, and the process becomes a bottleneck for loan origination teams.
+        </p>
+
+        <h2>Platform Goals</h2>
+        <p>I designed the platform around five core workflows:</p>
+        <ol>
+          <li><strong>Ingest</strong> — accept PDF, Excel (.xlsx/.xls), and CSV in single or bulk upload</li>
+          <li><strong>Extract</strong> — normalize transactions regardless of bank export format</li>
+          <li><strong>Categorize</strong> — tag Salary, EMI, UPI, Shopping, Bounce, Transfer automatically</li>
+          <li><strong>Aggregate</strong> — compute monthly totals, category breakdowns, salary averages</li>
+          <li><strong>Present</strong> — dashboard analytics ready for underwriter review (Part 2 adds AI layer)</li>
+        </ol>
+
+        <h2>System Architecture (Backend Focus)</h2>
+        <pre><code>┌─────────────────┐     ┌──────────────────────┐     ┌─────────────────┐
+│  Next.js 15     │────▶│  FastAPI             │────▶│  PostgreSQL 16  │
+│  Upload UI      │     │  /api/statements     │     │  statements     │
+│  Dashboard      │     │  SQLAlchemy ORM      │     │  transactions   │
+└─────────────────┘     └──────────┬───────────┘     └─────────────────┘
+                                     │
+                                     ▼
+                          ┌──────────────────────┐
+                          │  Parser Layer        │
+                          │  pdfplumber / openpyxl│
+                          │  column_map.py       │
+                          └──────────┬───────────┘
+                                     ▼
+                          ┌──────────────────────┐
+                          │  Categorizer         │
+                          │  Rule-based + LLM    │
+                          └──────────┬───────────┘
+                                     ▼
+                          ┌──────────────────────┐
+                          │  Analytics Engine    │
+                          │  monthly / category  │
+                          └──────────────────────┘</code></pre>
+
+        <h2>Tech Stack (Part 1 Layer)</h2>
+        <ul>
+          <li><strong>FastAPI</strong> — async upload endpoints, Pydantic validation, OpenAPI at <code>/docs</code></li>
+          <li><strong>SQLAlchemy 2</strong> — ORM models for statements, transactions, insights</li>
+          <li><strong>PostgreSQL</strong> — relational storage with audit-friendly status fields</li>
+          <li><strong>pdfplumber</strong> — PDF table extraction with text-line fallback</li>
+          <li><strong>openpyxl</strong> — Excel reading with <code>data_only=True</code> for formula cells</li>
+          <li><strong>Next.js 15</strong> — upload drag-and-drop, statement list, analytics tables</li>
+          <li><strong>Docker Compose</strong> — Postgres + backend + frontend for local and server deploy</li>
+        </ul>
+
+        <h2>Database Design</h2>
+        <p>Three core tables power the platform:</p>
+        <h3>statements</h3>
+        <ul>
+          <li><code>id</code>, <code>filename</code>, <code>file_path</code></li>
+          <li><code>bank_name</code>, <code>account_number</code> — detected during parse</li>
+          <li><code>status</code> — <code>processing</code> → <code>processed</code> or <code>failed</code></li>
+          <li><code>error_message</code> — user-visible reason when extraction fails</li>
+        </ul>
+        <h3>transactions</h3>
+        <ul>
+          <li><code>txn_date</code>, <code>description</code>, <code>debit</code>, <code>credit</code>, <code>balance</code></li>
+          <li><code>category</code> — assigned by categorizer (Salary, EMI, UPI, etc.)</li>
+        </ul>
+        <h3>statement_insights</h3>
+        <ul>
+          <li><code>insights_json</code> — AI pipeline output (populated in Part 2)</li>
+          <li><code>report_path</code> — generated PDF location</li>
+        </ul>
+
+        <h2>Upload Flow: Single &amp; Bulk</h2>
+        <p>
+          Single upload uses <code>POST /api/statements/upload</code>. The file is saved to a secure upload
+          directory with a UUID prefix, a statement row is created with <code>status=processing</code>, and
+          <code>process_statement()</code> runs synchronously before the API responds.
+        </p>
+        <p>
+          Bulk upload uses <code>POST /api/statements/upload/bulk</code> with multiple files. Each file is
+          processed independently — partial success is supported. The frontend drag-and-drop zone accepts
+          multi-select; on success with 2+ statements, users land on the Chat tab with all IDs selected.
+        </p>
+        <p>Supported formats: <code>.pdf</code>, <code>.xlsx</code>, <code>.xls</code>, <code>.csv</code></p>
+
+        <h2>The Parsing Challenge: No Fixed Headers</h2>
+        <p>
+          Indian bank exports are inconsistent. Real examples I've handled:
+        </p>
+        <ul>
+          <li><strong>HDFC</strong> — title rows before headers; columns named “Withdrawal Amt.” / “Deposit Amt.”</li>
+          <li><strong>SBI</strong> — “Txn Date”, “Value Date”, “Description” in different positions</li>
+          <li><strong>ICICI</strong> — Excel exports with account summary rows above transaction table</li>
+          <li><strong>Axis / Kotak</strong> — PDF tables that break across pages mid-row</li>
+        </ul>
+        <p>
+          Hardcoding “header is always row 0” fails on the second file. The solution is
+          <strong>header row scoring</strong> — not bank-specific row numbers.
+        </p>
+
+        <h2>column_map.py — Flexible Column Detection</h2>
+        <p>The shared parser module works for both PDF tables and Excel sheets:</p>
+        <ol>
+          <li><strong>Scan</strong> first 20 rows for the best header candidate</li>
+          <li><strong>Score</strong> each row by matched columns: date, description, debit, credit, balance</li>
+          <li><strong>Map synonyms</strong> — “Narration”, “Particulars”, “Transaction Details” → description</li>
+          <li><strong>Parse amounts</strong> — strip <code>Dr</code>/<code>Cr</code>, handle <code>(1,234.56)</code> negatives</li>
+          <li><strong>Emit</strong> normalized <code>ParsedTransaction</code> objects</li>
+          <li><strong>Deduplicate</strong> — hash on date + description + amounts to avoid double-counting</li>
+        </ol>
+        <p>Supported banks via signature detection: HDFC, SBI, ICICI, Axis, Kotak, PNB, BOB, Canara, Union, IDBI, Yes, IndusInd, Bandhan — plus generic fallback.</p>
+
+        <h2>PDF vs Excel Parsing Paths</h2>
+        <h3>PDF (pdfplumber)</h3>
+        <ul>
+          <li>Extract tables per page with flexible header detection</li>
+          <li>If table extraction fails, split text lines on whitespace gaps</li>
+          <li>Regex-detect amounts (<code>[\d,]+\.\d{2}</code>) and dates (DD/MM/YYYY, DD-MMM-YYYY)</li>
+          <li>Read first 2 pages for bank name and account number patterns</li>
+        </ul>
+        <h3>Excel / CSV (openpyxl)</h3>
+        <ul>
+          <li>Load all rows; run same <code>find_header_row()</code> logic</li>
+          <li>Try UTF-8, UTF-8-BOM, and Latin-1 encodings for CSV</li>
+          <li>Positional fallback if no header match — assume date, description, amounts columns</li>
+        </ul>
+
+        <h2>Transaction Categorization</h2>
+        <p>
+          Before AI analysis, a rule-based categorizer tags transactions using description keywords:
+        </p>
+        <ul>
+          <li><strong>Salary</strong> — “SALARY”, “NEFT CR-SALARY”, corporate credit patterns</li>
+          <li><strong>EMI</strong> — “EMI”, “LOAN”, “HDFC LTD”, “BAJAJ FIN” debit patterns</li>
+          <li><strong>UPI</strong> — “UPI/”, “@paytm”, “@ybl”</li>
+          <li><strong>Bounce</strong> — “CHQ RET”, “INSUFF”, “BOUNCE”</li>
+          <li><strong>ATM</strong> — “ATM WDL”, “CASH WDL”</li>
+        </ul>
+        <p>LLM batch categorization runs during the AI pipeline (Part 2) when OpenAI key is configured.</p>
+
+        <h2>Analytics Engine</h2>
+        <p><code>compute_analytics()</code> aggregates processed transactions into:</p>
+        <ul>
+          <li>Total credit, debit, net flow, transaction count</li>
+          <li>Monthly summary — credit/debit per <code>YYYY-MM</code></li>
+          <li>Category summary — spend and income by category</li>
+          <li>Avg salary credit, total EMI, EMI burden %, bounce count</li>
+          <li>Average monthly balance (when balance column present)</li>
+        </ul>
+        <p>These metrics feed the dashboard immediately after upload — no AI required.</p>
+
+        <h2>Failure Handling</h2>
+        <p>
+          When zero transactions are extracted, the statement is marked <code>failed</code> with a clear message:
+          “No transactions extracted. Try Excel export or a different PDF format.” This prevents empty dashboards
+          and guides agents to re-upload a better export.
+        </p>
+
+        <h2>Deployment</h2>
+        <p>Docker Compose runs four services:</p>
+        <ul>
+          <li><code>postgres</code> — port 5432</li>
+          <li><code>qdrant</code> — vector DB for chat (Part 2)</li>
+          <li><code>backend</code> — uvicorn on port 8000</li>
+          <li><code>frontend</code> — Next.js on port 3000</li>
+        </ul>
+        <p>Environment variables: <code>DATABASE_URL</code>, <code>OPENAI_API_KEY</code>, <code>GEMINI_API_KEY</code>, <code>QDRANT_URL</code></p>
+
+        <div class="article-cta">
+          <p><strong>Next:</strong> LangGraph AI pipeline, Hinglish chat assistant, and NBFC PDF credit reports.</p>
+          <a href="bank-statement-nbfc-part-2-ai-reports.html" class="btn btn--primary">Read Part 2 — AI &amp; Reports →</a>
+          <a href="bank-statement-analysis-ollama-gpu.html" class="btn btn--ghost">Production GPU Case Study</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nitesh Kumar Singh · <a href="https://nkscoder.in">nkscoder.in</a></p>
+      <div class="footer-links">
+        <a href="/blog/">← Back to Blog</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>NBFC Bank Statement Platform — Part 2: AI Pipeline, Chat &amp; Reports | NKSCoder</title>
+  <meta name="description" content="Case study Part 2: LangGraph AI agents for fraud and EMI detection, Hinglish RAG chat, multi-statement analysis, and NBFC credit assessment PDF reports by Nitesh Kumar Singh.">
+  <meta name="keywords" content="LangGraph, bank statement AI, RAG chat, NBFC credit report, fraud detection, EMI analysis, NKSCoder">
+  <meta name="author" content="Nitesh Kumar Singh">
+  <link rel="canonical" href="https://nkscoder.in/blog/bank-statement-nbfc-part-2-ai-reports.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nkscoder.in/blog/bank-statement-nbfc-part-2-ai-reports.html">
+  <meta property="og:title" content="NBFC Bank Statement Platform — Part 2: AI, Chat &amp; Reports">
+  <meta property="og:description" content="LangGraph multi-agent pipeline, Hinglish chat, and professional NBFC credit assessment PDFs.">
+  <meta property="og:image" content="https://nkscoder.in/assets/blog/bank-statement-nbfc-part-2.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://nkscoder.in/assets/blog/bank-statement-nbfc-part-2.jpg">
+  <link rel="stylesheet" href="../assets/fonts/fonts-inter.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo" aria-label="NKSCoder home">
+        <img src="../assets/brand/nkscoder-logo-fallback.png" alt="NKSCoder" class="logo-img" width="36" height="36">
+        <span class="logo-text"><span class="logo-bracket">&lt;</span>NKSCoder<span class="logo-bracket">/&gt;</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="/blog/" class="nav-link active">Blog</a></li>
+        <li><a href="/contact.html" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main class="article-page">
+    <article class="container article">
+      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a> · <a href="index.html">Blog</a> · Case Study · Part 2 of 2
+      </nav>
+
+      <header class="article-header">
+        <span class="blog-tag">Case Study · Part 2 · AI &amp; Reports</span>
+        <h1>NBFC Bank Statement Platform — Part 2: LangGraph AI, Hinglish Chat &amp; Credit Reports</h1>
+        <p class="article-meta">
+          By <strong>Nitesh Kumar Singh</strong> · NKSCoder ·
+          <time datetime="2026-06-19">June 19, 2026</time>
+          · <a href="bank-statement-nbfc-part-1-platform-parsing.html">← Part 1</a>
+        </p>
+      </header>
+
+      <figure class="article-hero-img">
+        <picture>
+          <source type="image/avif" srcset="../assets/blog/bank-statement-nbfc-part-2.avif">
+          <source type="image/webp" srcset="../assets/blog/bank-statement-nbfc-part-2.webp">
+          <img src="../assets/blog/bank-statement-nbfc-part-2.jpg" alt="Part 2 — LangGraph AI analysis, chat, and NBFC credit reports" width="640" height="426" decoding="async">
+        </picture>
+      </figure>
+
+      <div class="article-content">
+        <p class="article-lead">
+          <strong>Part 2 of 2.</strong> Once transactions are extracted and categorized (see
+          <a href="bank-statement-nbfc-part-1-platform-parsing.html">Part 1</a>), the intelligence layer kicks in:
+          a LangGraph multi-agent pipeline for risk analysis, a Hinglish chat assistant for loan agents, and
+          downloadable NBFC-standard credit assessment PDF reports.
+        </p>
+
+        <h2>From Data to Decisions</h2>
+        <p>
+          Raw transactions answer “what happened.” Underwriters need “what does it mean for this loan file?”
+          The AI layer transforms aggregated analytics into:
+        </p>
+        <ul>
+          <li>Risk score and severity-tagged flags</li>
+          <li>Income stability assessment</li>
+          <li>EMI burden relative to credits</li>
+          <li>Cashflow health over the statement period</li>
+          <li>Natural-language Q&amp;A for field agents</li>
+          <li>Printable credit memorandum for file documentation</li>
+        </ul>
+
+        <h2>LangGraph Agent Pipeline</h2>
+        <p>
+          Clicking <strong>Run AI Analysis</strong> triggers a compiled LangGraph state machine. Each node
+          reads and writes to a shared <code>PipelineState</code> dict:
+        </p>
+        <pre><code>extract → classify → fraud_check → cashflow_check
+                              → emi_check → salary_check → summarize_risk → END</code></pre>
+
+        <h3>1. Classify Node</h3>
+        <p>
+          Attempts LLM batch categorization via GPT-4o-mini. If API unavailable, falls back to rule-based
+          categorizer. Updates transaction <code>category</code> fields in PostgreSQL when LLM returns
+          confident labels.
+        </p>
+
+        <h3>2. Fraud Agent</h3>
+        <p>Detects patterns that raise underwriting concern:</p>
+        <ul>
+          <li><strong>Circular transactions</strong> — same amount repeated 6+ times (possible round-tripping)</li>
+          <li><strong>Cash-heavy account</strong> — ATM/cash debits &gt; 40% of total outflow</li>
+          <li><strong>Suspicious salary</strong> — round-number credits without salary keywords</li>
+          <li><strong>Balance spikes</strong> — sudden large credits before loan application window</li>
+        </ul>
+        <p>Outputs: <code>risk_level</code> (low/medium/high), <code>risk_score</code> 0–100, <code>flags[]</code> with severity.</p>
+
+        <h3>3. Cashflow Agent</h3>
+        <ul>
+          <li>Groups transactions by month; computes net flow per month</li>
+          <li>Counts months with negative net flow</li>
+          <li>Assigns <code>cashflow_health</code>: good / moderate / poor</li>
+          <li>Tracks average balance when available</li>
+        </ul>
+
+        <h3>4. EMI Agent</h3>
+        <ul>
+          <li>Identifies EMI and loan repayment debits by category</li>
+          <li>Detects recurring fixed debits (same amount 2+ times) as likely EMIs</li>
+          <li>Calculates <code>total_emi</code> and <code>emi_burden_pct</code> = EMI / total credits</li>
+        </ul>
+
+        <h3>5. Salary Agent</h3>
+        <ul>
+          <li>Finds salary-category credits; detects large monthly credits as proxy</li>
+          <li>Computes <code>avg_monthly_salary</code> and <code>salary_months</code> count</li>
+          <li><code>income_stability_score</code> — 100 minus coefficient of variation across salary credits</li>
+        </ul>
+
+        <h3>6. Risk Summary Node</h3>
+        <p>
+          Merges all agent outputs into a single underwriter narrative stored as <code>risk_summary</code> —
+          e.g. “Overall risk: medium (55/100). Average monthly income ~INR 75,000. EMI burden: 21% of credits.”
+        </p>
+
+        <h2>Dashboard Presentation</h2>
+        <p>After analysis, the dashboard shows:</p>
+        <ul>
+          <li>Risk level badge with score</li>
+          <li>Income stability and cashflow health cards</li>
+          <li>Individual risk flags with severity tags</li>
+          <li>Updated category breakdown on transactions table</li>
+          <li><strong>Download PDF Report</strong> button when generation succeeds</li>
+        </ul>
+
+        <h2>Hinglish Chat Assistant</h2>
+        <p>
+          Loan agents in India don't write formal queries. They ask:
+          <em>“EMI kitna hai?”</em>, <em>“Bounce hua kya?”</em>, <em>“Loan mil sakta hai?”</em>,
+          <em>“Summary batao”</em>. The chat layer is built for this.
+        </p>
+
+        <h3>Single vs Multiple Statements</h3>
+        <ul>
+          <li><strong>Single mode</strong> — one statement selected; deep analytics context</li>
+          <li><strong>Multiple mode</strong> — checkbox select; combined totals across accounts/months</li>
+          <li>Bulk upload auto-redirects to Chat with all statement IDs pre-selected</li>
+        </ul>
+
+        <h3>RAG Architecture</h3>
+        <ol>
+          <li>Build analytics context block (credits, debits, salary, EMI, bounces, categories)</li>
+          <li>Search Qdrant vector store for relevant transaction descriptions</li>
+          <li>Keyword fallback if Qdrant unavailable</li>
+          <li>Send context + user question to GPT-4o-mini (Gemini fallback)</li>
+          <li>Rule-based answer if LLM quota exhausted — never returns blank</li>
+        </ol>
+        <p>
+          System prompt enforces layman language: “money coming in” not “credits”, lakh/crore formatting,
+          Hinglish when user writes in Hindi.
+        </p>
+
+        <h3>Example Rule-Based Answers (No LLM)</h3>
+        <ul>
+          <li><strong>“Salary kitni hai?”</strong> → avg salary from analytics + stability score</li>
+          <li><strong>“Bounce hua kya?”</strong> → bounce count with lender warning if &gt; 0</li>
+          <li><strong>“Loan mil sakta hai?”</strong> → rough eligibility estimate from disposable income</li>
+          <li><strong>“Summary batao”</strong> → full period overview in simple language</li>
+        </ul>
+
+        <h2>NBFC Credit Assessment PDF Report</h2>
+        <p>
+          Underwriters need a document for the loan file — not a JSON dump. The report agent generates a
+          multi-section PDF with fpdf2:
+        </p>
+        <ol>
+          <li><strong>Header bar</strong> — report title, reference ID, confidential tag</li>
+          <li><strong>Account information</strong> — bank, masked account number, analysis period</li>
+          <li><strong>Executive summary</strong> — color-coded risk banner (green/amber/red)</li>
+          <li><strong>Financial overview</strong> — KPI row: credits, debits, net flow, avg balance</li>
+          <li><strong>Category breakdown table</strong> — spend % by category</li>
+          <li><strong>Income analysis</strong> — salary, stability score, pattern assessment</li>
+          <li><strong>Obligations &amp; EMI</strong> — total EMI, burden %, bounce count</li>
+          <li><strong>Cashflow analysis</strong> — health, savings rate</li>
+          <li><strong>Risk flags table</strong> — severity, type, observation</li>
+          <li><strong>Monthly trend table</strong> — month-wise credit/debit/net</li>
+          <li><strong>Credit scoring summary</strong> — parameter scores with remarks</li>
+          <li><strong>Underwriter recommendation</strong> — proceed / enhanced DD / manual review</li>
+          <li><strong>Disclaimer footer</strong> on every page</li>
+        </ol>
+        <p>Unicode rupee symbols are sanitized to “INR” for PDF font compatibility.</p>
+
+        <h2>API Endpoints (Intelligence Layer)</h2>
+        <pre><code>POST /api/statements/{id}/analyze   — run LangGraph pipeline
+GET  /api/statements/{id}/insights    — fetch AI insights JSON
+GET  /api/statements/{id}/report      — download PDF report
+POST /api/chat                        — { statement_ids[], question }
+GET  /health                          — API status + masked key config</code></pre>
+
+        <h2>Comparison: This Build vs Production GPU System</h2>
+        <p>
+          I also lead production bank statement analysis at
+          <a href="bank-statement-analysis-ollama-gpu.html">Airtel Payments Bank (Ollama + NVIDIA GPU)</a>:
+        </p>
+        <ul>
+          <li><strong>Production</strong> — Django, Celery, Ray, on-premises Ollama, thousands of statements/day</li>
+          <li><strong>This NBFC build</strong> — FastAPI, LangGraph, Next.js, cloud LLM APIs, agent UX focus</li>
+        </ul>
+        <p>Shared lessons: hybrid rule+LLM parsing, idempotent processing, always ship non-AI fallbacks.</p>
+
+        <h2>Key Lessons</h2>
+        <ol>
+          <li><strong>LangGraph isolates agents</strong> — test fraud logic without running full pipeline</li>
+          <li><strong>Never depend only on LLM APIs</strong> — quota limits are real; rule fallback is mandatory</li>
+          <li><strong>Chat in the user's language</strong> — Hinglish adoption is higher than formal English UI</li>
+          <li><strong>Reports = trust</strong> — structured PDFs signal professionalism to NBFC partners</li>
+          <li><strong>Multi-statement chat</strong> — agents often have 3–6 months across accounts; support it from day one</li>
+        </ol>
+
+        <h2>Roadmap</h2>
+        <ul>
+          <li>OCR for scanned/image PDFs</li>
+          <li>Loan eligibility scoring engine (Phase 3)</li>
+          <li>Ollama local LLM — same stack as production GPU system</li>
+          <li>Multi-tenant SaaS with NBFC API keys</li>
+          <li>CIBIL integration and white-label reports</li>
+        </ul>
+
+        <div class="article-cta">
+          <p>Building fintech AI, underwriting tools, or bank statement intelligence? I can help.</p>
+          <a href="/contact.html" class="btn btn--primary">Get in Touch</a>
+          <a href="bank-statement-nbfc-part-1-platform-parsing.html" class="btn btn--ghost">← Part 1: Platform &amp; Parsing</a>
+          <a href="bank-statement-analysis-ollama-gpu.html" class="btn btn--ghost">Production GPU Case Study</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Nitesh Kumar Singh · <a href="https://nkscoder.in">nkscoder.in</a></p>
+      <div class="footer-links">
+        <a href="/blog/">← Back to Blog</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../script.js" defer></script>
+</body>
+</html>

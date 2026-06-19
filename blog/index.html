@@ -66,18 +66,19 @@
         "@type": "ItemList",
         "name": "NKSCoder Blog Articles",
         "description": "All blog posts by Nitesh Kumar Singh (NKSCoder, NKS AI) on AI, LLM, Python, and fintech.",
-        "numberOfItems": 10,
+        "numberOfItems": 11,
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "url": "https://nkscoder.in/blog/bank-statement-analysis-fastapi-langgraph.html", "name": "NBFC Bank Statement Analysis with FastAPI & LangGraph" },
-          { "@type": "ListItem", "position": 2, "url": "https://nkscoder.in/blog/prompt-engineering-simple-guide.html", "name": "Prompt Engineering in Simple Words" },
-          { "@type": "ListItem", "position": 3, "url": "https://nkscoder.in/blog/what-is-llm-simple-guide.html", "name": "What Is an LLM? A Simple Guide for Beginners" },
-          { "@type": "ListItem", "position": 4, "url": "https://nkscoder.in/blog/what-is-ollama-local-ai.html", "name": "What Is Ollama? Run AI on Your Own Computer" },
-          { "@type": "ListItem", "position": 5, "url": "https://nkscoder.in/blog/how-ai-reads-pdf-documents.html", "name": "How AI Reads PDF Documents" },
-          { "@type": "ListItem", "position": 6, "url": "https://nkscoder.in/blog/when-to-use-ai-in-projects.html", "name": "When Should You Use AI in Your Project?" },
-          { "@type": "ListItem", "position": 7, "url": "https://nkscoder.in/blog/ray-role-in-llm-pipelines.html", "name": "What Is Ray's Role in LLM Pipelines?" },
-          { "@type": "ListItem", "position": 8, "url": "https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html", "name": "Building AI Bank Statement Analysis with Ollama on NVIDIA GPU" },
-          { "@type": "ListItem", "position": 9, "url": "https://nkscoder.in/blog/django-fintech-backend-architecture.html", "name": "Django Backend Architecture for Fintech at Scale" },
-          { "@type": "ListItem", "position": 10, "url": "https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html", "name": "Scaling Python Workers with Celery, RabbitMQ, and Ray" }
+          { "@type": "ListItem", "position": 1, "url": "https://nkscoder.in/blog/bank-statement-nbfc-part-1-platform-parsing.html", "name": "NBFC Platform Part 1: Architecture & Parsing" },
+          { "@type": "ListItem", "position": 2, "url": "https://nkscoder.in/blog/bank-statement-nbfc-part-2-ai-reports.html", "name": "NBFC Platform Part 2: AI, Chat & Reports" },
+          { "@type": "ListItem", "position": 3, "url": "https://nkscoder.in/blog/prompt-engineering-simple-guide.html", "name": "Prompt Engineering in Simple Words" },
+          { "@type": "ListItem", "position": 4, "url": "https://nkscoder.in/blog/what-is-llm-simple-guide.html", "name": "What Is an LLM? A Simple Guide for Beginners" },
+          { "@type": "ListItem", "position": 5, "url": "https://nkscoder.in/blog/what-is-ollama-local-ai.html", "name": "What Is Ollama? Run AI on Your Own Computer" },
+          { "@type": "ListItem", "position": 6, "url": "https://nkscoder.in/blog/how-ai-reads-pdf-documents.html", "name": "How AI Reads PDF Documents" },
+          { "@type": "ListItem", "position": 7, "url": "https://nkscoder.in/blog/when-to-use-ai-in-projects.html", "name": "When Should You Use AI in Your Project?" },
+          { "@type": "ListItem", "position": 8, "url": "https://nkscoder.in/blog/ray-role-in-llm-pipelines.html", "name": "What Is Ray's Role in LLM Pipelines?" },
+          { "@type": "ListItem", "position": 9, "url": "https://nkscoder.in/blog/bank-statement-analysis-ollama-gpu.html", "name": "Building AI Bank Statement Analysis with Ollama on NVIDIA GPU" },
+          { "@type": "ListItem", "position": 10, "url": "https://nkscoder.in/blog/django-fintech-backend-architecture.html", "name": "Django Backend Architecture for Fintech at Scale" },
+          { "@type": "ListItem", "position": 11, "url": "https://nkscoder.in/blog/scaling-python-celery-rabbitmq-ray.html", "name": "Scaling Python Workers with Celery, RabbitMQ, and Ray" }
         ]
       }
     ]
@@ -123,20 +124,39 @@
 
       <div class="blog-grid blog-grid--listing">
         <article class="blog-card blog-card--featured">
-          <a href="bank-statement-analysis-fastapi-langgraph.html" class="blog-card-link">
+          <a href="bank-statement-nbfc-part-1-platform-parsing.html" class="blog-card-link">
             <div class="blog-card-thumb">
               <picture>
-                <source type="image/avif" srcset="../assets/blog/bank-statement-fastapi-langgraph.avif">
-                <source type="image/webp" srcset="../assets/blog/bank-statement-fastapi-langgraph.webp">
-                <img src="../assets/blog/bank-statement-fastapi-langgraph.jpg" alt="NBFC bank statement analysis with FastAPI and LangGraph" loading="lazy" width="640" height="426" decoding="async">
+                <source type="image/avif" srcset="../assets/blog/bank-statement-nbfc-part-1.avif">
+                <source type="image/webp" srcset="../assets/blog/bank-statement-nbfc-part-1.webp">
+                <img src="../assets/blog/bank-statement-nbfc-part-1.jpg" alt="NBFC bank statement Part 1 — parsing" loading="lazy" width="640" height="426" decoding="async">
               </picture>
             </div>
             <div class="blog-card-body">
-              <span class="blog-tag">Case Study · Fintech · NBFC</span>
-              <h2>NBFC Bank Statement Analysis with FastAPI &amp; LangGraph</h2>
-              <p>Multi-bank parsing, LangGraph AI agents, Hinglish chat assistant, bulk upload, and NBFC credit assessment PDF reports.</p>
-              <time class="blog-date" datetime="2026-06-18">June 18, 2026</time>
-              <span class="blog-read-more">Read case study →</span>
+              <span class="blog-tag">Case Study · Part 1 · Parsing</span>
+              <h2>NBFC Platform — Part 1: Architecture &amp; Multi-Bank Parsing</h2>
+              <p>FastAPI backend, flexible Indian bank PDF/Excel parsing, bulk upload, categorization, and analytics engine.</p>
+              <time class="blog-date" datetime="2026-06-19">June 19, 2026</time>
+              <span class="blog-read-more">Read Part 1 →</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="blog-card blog-card--featured">
+          <a href="bank-statement-nbfc-part-2-ai-reports.html" class="blog-card-link">
+            <div class="blog-card-thumb">
+              <picture>
+                <source type="image/avif" srcset="../assets/blog/bank-statement-nbfc-part-2.avif">
+                <source type="image/webp" srcset="../assets/blog/bank-statement-nbfc-part-2.webp">
+                <img src="../assets/blog/bank-statement-nbfc-part-2.jpg" alt="NBFC bank statement Part 2 — AI and reports" loading="lazy" width="640" height="426" decoding="async">
+              </picture>
+            </div>
+            <div class="blog-card-body">
+              <span class="blog-tag">Case Study · Part 2 · AI</span>
+              <h2>NBFC Platform — Part 2: LangGraph AI, Chat &amp; Reports</h2>
+              <p>Fraud, EMI, and salary agents, Hinglish RAG chat, multi-statement analysis, NBFC credit assessment PDF.</p>
+              <time class="blog-date" datetime="2026-06-19">June 19, 2026</time>
+              <span class="blog-read-more">Read Part 2 →</span>
             </div>
           </a>
         </article>
