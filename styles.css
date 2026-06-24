@@ -1339,8 +1339,14 @@ main {
 /* AI expertise — banking SEO section */
 .ai-expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .ai-expertise-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .ai-expertise-card {
