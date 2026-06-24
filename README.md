@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://nkscoder.in">
+  <a href="https://nkscoder.in" target="_blank" rel="noopener noreferrer">
     <img src="assets/brand/nkscoder-logo.webp" alt="NKSCoder Logo" width="220">
   </a>
 </p>
 
-<h1 align="center"><a href="https://nkscoder.in">Nitesh Kumar Singh · NKSCoder</a></h1>
+<h1 align="center"><a href="https://nkscoder.in" target="_blank" rel="noopener noreferrer">Nitesh Kumar Singh · NKSCoder</a></h1>
 
 <p align="center">
   <strong>AI Developer for Banking &amp; Fintech</strong><br>
