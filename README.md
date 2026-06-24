@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="assets/brand/nkscoder-logo.webp" alt="NKSCoder Logo" width="220">
+  <a href="https://nkscoder.in">
+    <img src="assets/brand/nkscoder-logo.webp" alt="NKSCoder Logo" width="220">
+  </a>
 </p>
 
 <h1 align="center">Nitesh Kumar Singh · NKSCoder</h1>
