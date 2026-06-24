@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">Nitesh Kumar Singh · NKSCoder</h1>
+<h1 align="center"><a href="https://nkscoder.in">Nitesh Kumar Singh · NKSCoder</a></h1>
 
 <p align="center">
   <strong>AI Developer for Banking &amp; Fintech</strong><br>
