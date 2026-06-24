@@ -1336,6 +1336,43 @@ main {
   text-align: center;
 }
 
+/* AI expertise — banking SEO section */
+.ai-expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1.25rem;
+}
+
+.ai-expertise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.ai-expertise-card:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+.ai-expertise-card h3 {
+  font-size: 1.05rem;
+  color: var(--accent-light);
+  margin-bottom: 0.65rem;
+}
+
+.ai-expertise-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+.ai-expertise-card a {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
 .article-page {
   position: relative;
   z-index: 1;
@@ -1793,6 +1830,14 @@ main {
 
   .blog-section-cta .btn {
     width: 100%;
+  }
+
+  .ai-expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-expertise-card {
+    padding: 1.25rem;
   }
 }
 
