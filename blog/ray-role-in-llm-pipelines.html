@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Ray in LLM Pipelines: Role &amp; Architecture | NKSCoder</title>
-  <meta name="description" content="What Ray does in LLM pipelines — distributed preprocessing, batch inference orchestration, and GPU worker scaling with Ollama, Django, and Celery. By Nitesh Kumar Singh.">
+  <title>Ray LLM: Role in LLM Pipelines &amp; Architecture | NKSCoder</title>
+  <meta name="description" content="What is Ray LLM? How Ray fits in LLM pipelines — distributed preprocessing, batch inference, GPU scaling with Ollama and Python. By AI developer Nitesh Kumar Singh.">
   <meta name="keywords" content="Ray LLM, Ray distributed inference, Ray Serve, Ray Data, Ollama Ray, LLM pipeline Python, Nitesh, Nitesh Kumar Singh, NKSCoder, NKS Coder, NKS, NKS AI, coder, AI coder, AI developer, distributed LLM, GPU batch inference, Nitesh Kumar, nkscoder.in, Python coder, niteshkumar, niteshkumarsingh, nkscoder github">
   <meta name="author" content="Nitesh Kumar Singh">
   <link rel="author" href="https://nkscoder.in/">
@@ -39,11 +39,11 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "What Is Ray's Role in LLM Pipelines?",
+    "headline": "Ray LLM: Role in LLM Pipelines",
     "description": "How Ray enables distributed preprocessing, batch LLM inference orchestration, and GPU worker scaling in production Python systems with Ollama and Django.",
     "image": "https://nkscoder.in/assets/blog/ray-llm-pipelines.jpg",
     "datePublished": "2026-06-15",
-    "dateModified": "2026-06-15",
+    "dateModified": "2026-06-28",
     "author": {
       "@type": "Person",
       "name": "Nitesh Kumar Singh",
@@ -69,10 +69,33 @@
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nkscoder.in/" },
       { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nkscoder.in/blog/" },
-      { "@type": "ListItem", "position": 3, "name": "What Is Ray's Role in LLM Pipelines?", "item": "https://nkscoder.in/blog/ray-role-in-llm-pipelines.html" }
+      { "@type": "ListItem", "position": 3, "name": "Ray LLM: Role in LLM Pipelines", "item": "https://nkscoder.in/blog/ray-role-in-llm-pipelines.html" }
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Ray LLM?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ray LLM refers to using the Ray distributed computing framework for LLM workloads — batch preprocessing of documents, parallel GPU inference with Ollama, and scaling Python workers across multiple machines. Ray sits between Django/Celery (job queues) and Ollama (model inference) in production fintech pipelines."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Ray's role in LLM pipelines?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ray handles the heavy parallel work in LLM pipelines: splitting thousands of PDFs across workers, preprocessing text, orchestrating batch calls to Ollama on NVIDIA GPUs, and aggregating results. Celery manages the queue; Ray scales the compute."
+        }
+      }
+    ]
+  }
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -109,7 +132,7 @@
 
       <header class="article-header">
         <span class="blog-tag">Ray · LLM · Distributed Systems</span>
-        <h1>What Is Ray's Role in LLM Pipelines?</h1>
+        <h1>Ray LLM: Role in LLM Pipelines</h1>
         <p class="article-meta">
           By <strong>Nitesh Kumar Singh</strong> · AI Developer, Quess Corp Ltd (Airtel Payments Bank) ·
           <time datetime="2026-06-15">June 15, 2026</time>
