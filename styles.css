@@ -1444,6 +1444,22 @@ main {
   line-height: 1.7;
 }
 
+.article-answer {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ai-accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-answer p {
+  margin-bottom: 0;
+  color: var(--text) !important;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
 .article-content ul,
 .article-content ol {
   padding-left: 1.25rem;

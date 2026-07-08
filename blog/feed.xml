@@ -5,8 +5,22 @@
     <link>https://nkscoder.in/blog/</link>
     <description>NKSCoder blog by Nitesh Kumar Singh — Nitesh, niteshkumar, niteshkumarsingh, NKS Coder, NKS, NKS AI, coder — AI developer, Python coder. Ollama AI, LLM guides, Django fintech &amp; backend case studies at nkscoder.in.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jun 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jul 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>LLM for Beginners: Meaning, Basics &amp; Simple Guide</title>
+      <link>https://nkscoder.in/blog/llm-for-beginners.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/llm-for-beginners.html</guid>
+      <pubDate>Tue, 08 Jul 2026 00:00:00 +0530</pubDate>
+      <description>LLM meaning, basics, and a beginner path to understanding Large Language Models in plain English.</description>
+    </item>
+    <item>
+      <title>What Is Ray LLM? Simple Guide for Beginners</title>
+      <link>https://nkscoder.in/blog/what-is-ray-llm-simple-guide.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/what-is-ray-llm-simple-guide.html</guid>
+      <pubDate>Tue, 08 Jul 2026 00:00:00 +0530</pubDate>
+      <description>Ray LLM explained in simple words — how Ray speeds up LLM batch jobs with parallel Python and GPUs.</description>
+    </item>
     <item>
       <title>NBFC Platform Part 1: Architecture &amp; Multi-Bank Parsing</title>
       <link>https://nkscoder.in/blog/bank-statement-nbfc-part-1-platform-parsing.html</link>
