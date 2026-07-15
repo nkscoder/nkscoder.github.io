@@ -1,0 +1,33 @@
+---
+description: Blog topic strategy for NKSCoder SEO content
+globs: blog/**/*.html,index.html,sitemap.xml,blog/feed.xml
+alwaysApply: false
+---
+
+# Blog Topic Strategy
+
+When asked to create, improve, or suggest blogs for this portfolio, prioritize topics that strengthen NKSCoder's positioning as an AI developer for banking, NBFC, and local LLM systems.
+
+Prefer these topic clusters:
+
+1. Banking AI / NBFC
+- Bank statement analysis
+- CIBIL integration
+- Loan eligibility
+- Fraud, EMI, salary, bounce, and cashflow detection
+
+2. Local AI / Ollama / GPU
+- Ollama on NVIDIA GPU
+- Local LLM for private or sensitive data
+- No-cloud AI for banks and NBFCs
+- Ray, Celery, and batch inference for document workloads
+
+3. Simple AI Guides
+- LLM meaning, full form, examples, and basics
+- Ollama meaning and local AI use cases
+- Ray LLM in simple words
+- PDF AI, OCR, document extraction, and LLM document analysis
+
+Before creating a new blog, check whether an existing indexed page already targets the same query. If yes, prefer a complementary supporting article or a small internal link update instead of disrupting the already-ranking page.
+
+For each blog task, suggest 2-3 topic ideas from the above clusters and explain which Google Search query each topic targets.
