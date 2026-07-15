@@ -1426,6 +1426,26 @@ main {
   display: block;
 }
 
+.article-inline-img {
+  margin: 1.5rem 0 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.article-inline-img img {
+  width: 100%;
+  display: block;
+}
+
+.article-inline-img figcaption {
+  padding: 0.85rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
 .article-content h2 {
   font-size: 1.35rem;
   margin: 2rem 0 1rem;

@@ -5,7 +5,7 @@
     <link>https://nkscoder.in/blog/</link>
     <description>NKSCoder blog by Nitesh Kumar Singh — Nitesh, niteshkumar, niteshkumarsingh, NKS Coder, NKS, NKS AI, coder — AI developer, Python coder. Ollama AI, LLM guides, Django fintech &amp; backend case studies at nkscoder.in.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Jul 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>LLM for Beginners: Meaning, Basics &amp; Simple Guide</title>
@@ -13,6 +13,13 @@
       <guid isPermaLink="true">https://nkscoder.in/blog/llm-for-beginners.html</guid>
       <pubDate>Tue, 08 Jul 2026 00:00:00 +0530</pubDate>
       <description>LLM meaning, basics, and a beginner path to understanding Large Language Models in plain English.</description>
+    </item>
+    <item>
+      <title>LLM Full Form, Meaning &amp; Simple Examples</title>
+      <link>https://nkscoder.in/blog/llm-full-form-meaning-examples.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/llm-full-form-meaning-examples.html</guid>
+      <pubDate>Wed, 15 Jul 2026 00:00:00 +0530</pubDate>
+      <description>LLM full form is Large Language Model. Learn LLM meaning, examples, types, AI vs LLM, and whether ChatGPT is an LLM.</description>
     </item>
     <item>
       <title>What Is Ray LLM? Simple Guide for Beginners</title>
