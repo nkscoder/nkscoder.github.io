@@ -236,6 +236,10 @@
           sends a prompt and gets a JSON response — same idea as calling OpenAI, but everything stays on your server.
         </p>
         <p>
+          When those apps process scanned files, OCR and extraction quality matters first. This simple walkthrough helps:
+          <a href="how-ai-reads-pdf-documents.html">How AI Reads PDF Documents</a>.
+        </p>
+        <p>
           In my work at Airtel Payments Bank, we use Ollama on NVIDIA GPUs to analyze bank statements.
           Django receives the upload, Celery queues the job, and Ollama reads the document and returns
           structured data — all inside our own infrastructure.
