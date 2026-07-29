@@ -2,7 +2,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url('inter-400.woff2') format('woff2');
 }
 
@@ -10,6 +10,6 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500 700;
-  font-display: optional;
+  font-display: swap;
   src: url('inter-600.woff2') format('woff2');
 }
