@@ -1,0 +1,31 @@
+{
+  "name": "NKSCoder — AI Developer Portfolio",
+  "short_name": "NKSCoder",
+  "description": "AI Developer portfolio by Nitesh Kumar Singh — Ollama, LangGraph, RAG, and Banking AI.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/brand/nkscoder-logo-fallback.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/brand/nkscoder-logo-fallback.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
