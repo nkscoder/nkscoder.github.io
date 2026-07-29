@@ -5,8 +5,15 @@
     <link>https://nkscoder.in/blog/</link>
     <description>NKSCoder blog by Nitesh Kumar Singh — Nitesh, niteshkumar, niteshkumarsingh, NKS Coder, NKS, NKS AI, coder — AI developer, Python coder. Ollama AI, LLM guides, Django fintech &amp; backend case studies at nkscoder.in.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Jul 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Difference Between AI, ML, LLM, and Generative AI</title>
+      <link>https://nkscoder.in/blog/difference-ai-ml-llm-generative-ai.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/difference-ai-ml-llm-generative-ai.html</guid>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 +0530</pubDate>
+      <description>Simple words and examples to understand AI vs ML vs LLM vs Generative AI.</description>
+    </item>
     <item>
       <title>LLM Means — What It Stands For in Simple Words (With Examples)</title>
       <link>https://nkscoder.in/blog/llm-means-simple-words-examples.html</link>
