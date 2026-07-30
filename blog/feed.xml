@@ -8,6 +8,13 @@
     <lastBuildDate>Thu, 30 Jul 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Nitesh AI Developer — Nitesh Kumar Singh (NKSCoder)</title>
+      <link>https://nkscoder.in/blog/nitesh-ai-developer.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/nitesh-ai-developer.html</guid>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 +0530</pubDate>
+      <description>Nitesh AI developer and Nitesh developer — profile of Nitesh Kumar Singh for banking AI, Ollama, and local LLM.</description>
+    </item>
+    <item>
       <title>Local LLM for Banks &amp; NBFCs — Simple Guide With Examples</title>
       <link>https://nkscoder.in/blog/local-llm-for-banks-nbfc.html</link>
       <guid isPermaLink="true">https://nkscoder.in/blog/local-llm-for-banks-nbfc.html</guid>
