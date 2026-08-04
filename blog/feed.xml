@@ -5,8 +5,15 @@
     <link>https://nkscoder.in/blog/</link>
     <description>NKSCoder blog by Nitesh Kumar Singh — Nitesh, niteshkumar, niteshkumarsingh, NKS Coder, NKS, NKS AI, coder — AI developer, Python coder. Ollama AI, LLM guides, Django fintech &amp; backend case studies at nkscoder.in.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Jul 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>StatementIQ Launch — Free Bank Statement FinHealth Score (India)</title>
+      <link>https://nkscoder.in/blog/statementiq-bank-statement-analyzer-launch.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/statementiq-bank-statement-analyzer-launch.html</guid>
+      <pubDate>Tue, 04 Aug 2026 00:00:00 +0530</pubDate>
+      <description>StatementIQ is live — upload bank PDF/Excel, get FinHealth score, Hinglish AI chat. First report free.</description>
+    </item>
     <item>
       <title>Local LLM for Banks &amp; NBFCs — Simple Guide With Examples</title>
       <link>https://nkscoder.in/blog/local-llm-for-banks-nbfc.html</link>
