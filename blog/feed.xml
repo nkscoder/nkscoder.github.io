@@ -5,8 +5,15 @@
     <link>https://nkscoder.in/blog/</link>
     <description>NKSCoder blog by Nitesh Kumar Singh — Nitesh, niteshkumar, niteshkumarsingh, NKS Coder, NKS, NKS AI, coder — AI developer, Python coder. Ollama AI, LLM guides, Django fintech &amp; backend case studies at nkscoder.in.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2026 00:00:00 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 00:00:00 +0530</lastBuildDate>
     <atom:link href="https://nkscoder.in/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>StatementIQ WhatsApp + Smart Budget Alerts — FinHealth Score in 1 Minute (India)</title>
+      <link>https://nkscoder.in/blog/statementiq-whatsapp-budget-alerts.html</link>
+      <guid isPermaLink="true">https://nkscoder.in/blog/statementiq-whatsapp-budget-alerts.html</guid>
+      <pubDate>Wed, 12 Aug 2026 00:00:00 +0530</pubDate>
+      <description>Send your bank PDF on WhatsApp, get FinHealth in 1 minute. Plus EMI and spending alerts. First report free on statementiq.in.</description>
+    </item>
     <item>
       <title>StatementIQ Launch — Free Bank Statement FinHealth Score (India)</title>
       <link>https://nkscoder.in/blog/statementiq-bank-statement-analyzer-launch.html</link>

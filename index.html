@@ -178,6 +178,9 @@
 
         <div class="hero-actions">
           <a href="/contact.html" class="btn btn--primary">Get in Touch</a>
+          <a href="/cv.html" class="btn btn--ghost">View CV</a>
+          <a href="/NITESH-KUMAR-SINGH-CV.pdf" class="btn btn--ghost" download>Download CV</a>
+          <a href="https://statementiq.in/" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">StatementIQ</a>
           <a href="#projects" class="btn btn--ghost">View Projects</a>
           <a href="/blog/" class="btn btn--ghost">Read Blog</a>
           <a href="https://github.com/nkscoder" class="btn btn--ghost" target="_blank" rel="me noopener noreferrer">GitHub Profile</a>
@@ -359,10 +362,32 @@
     <section id="projects" class="section container">
       <div class="section-header">
         <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Production systems across fintech, hospitality, e-commerce, and media.</p>
+        <p class="section-subtitle">Own product StatementIQ, plus production systems across fintech, hospitality, and e-commerce.</p>
       </div>
       <div class="project-grid">
         <article class="project-card project-card--highlight">
+          <div class="project-thumb">
+            <picture>
+              <source type="image/avif" srcset="assets/blog/statementiq-launch-hero.avif">
+              <source type="image/webp" srcset="assets/blog/statementiq-launch-hero.webp">
+              <img src="assets/blog/statementiq-launch-hero.jpg" alt="StatementIQ — FinHealth score from Indian bank statements by NKSCoder" loading="lazy" width="640" height="426" decoding="async">
+            </picture>
+            <div class="project-thumb-overlay">
+              <h3>StatementIQ</h3>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Own Product · Fintech · AI · 2026</span>
+            <p><strong>StatementIQ</strong> — my bank statement analyzer for India. Upload PDF/Excel, get a <strong>FinHealth score</strong> in plain English, Hinglish AI chat, and a full PDF report. 15+ banks; first report free.</p>
+            <a href="https://statementiq.in/" class="project-link" target="_blank" rel="noopener noreferrer">statementiq.in →</a>
+            <a href="https://statementiq.in/login" class="project-link" target="_blank" rel="noopener noreferrer">Try free →</a>
+            <a href="blog/statementiq-bank-statement-analyzer-launch.html" class="project-link">Launch story →</a>
+            <a href="blog/statementiq-whatsapp-budget-alerts.html" class="project-link">WhatsApp + alerts →</a>
+            <a href="https://nkscoder.in/" class="project-link">nkscoder.in →</a>
+            <span class="project-stack">Python · Django/FastAPI · LLM · PDF parsing · PostgreSQL · SaaS</span>
+          </div>
+        </article>
+        <article class="project-card">
           <div class="project-thumb">
             <picture>
               <source type="image/avif" srcset="assets/blog/bank-statement-nbfc-part-1.avif">
@@ -528,20 +553,20 @@
         </div>
         <div class="blog-grid blog-grid--home">
           <article class="blog-card blog-card--featured">
-            <a href="blog/bank-statement-nbfc-part-1-platform-parsing.html" class="blog-card-link">
+            <a href="blog/statementiq-whatsapp-budget-alerts.html" class="blog-card-link">
               <div class="blog-card-thumb">
                 <picture>
-                  <source type="image/avif" srcset="assets/blog/bank-statement-nbfc-part-1.avif">
-                  <source type="image/webp" srcset="assets/blog/bank-statement-nbfc-part-1.webp">
-                  <img src="assets/blog/bank-statement-nbfc-part-1.jpg" alt="NBFC bank statement Part 1 — parsing" loading="lazy" width="640" height="426" decoding="async">
+                  <source type="image/avif" srcset="assets/blog/statementiq-whatsapp-alerts-hero.avif">
+                  <source type="image/webp" srcset="assets/blog/statementiq-whatsapp-alerts-hero.webp">
+                  <img src="assets/blog/statementiq-whatsapp-alerts-hero.jpg" alt="StatementIQ WhatsApp FinHealth score and smart budget alerts" loading="lazy" width="640" height="360" decoding="async">
                 </picture>
               </div>
               <div class="blog-card-body">
-                <span class="blog-tag">Case Study · Part 1 · Parsing</span>
-                <h3>NBFC Platform — Part 1: Architecture &amp; Multi-Bank Parsing</h3>
-                <p>FastAPI backend, flexible Indian bank PDF/Excel parsing, bulk upload, categorization.</p>
-                <time class="blog-date" datetime="2026-06-19">June 19, 2026</time>
-                <span class="blog-read-more">Read Part 1 →</span>
+                <span class="blog-tag">Product · StatementIQ · WhatsApp</span>
+                <h3>StatementIQ Next: WhatsApp Analysis + Smart Budget Alerts</h3>
+                <p>Send bank PDF on WhatsApp → FinHealth in 1 minute. Plus EMI and spending alerts.</p>
+                <time class="blog-date" datetime="2026-08-12">August 12, 2026</time>
+                <span class="blog-read-more">Read product post →</span>
               </div>
             </a>
           </article>
@@ -791,6 +816,8 @@
       </p>
       <div class="find-online-links">
         <a href="https://nkscoder.in" rel="me">🌐 nkscoder.in — Official site</a>
+        <a href="https://statementiq.in/" target="_blank" rel="noopener noreferrer">📊 StatementIQ — statementiq.in</a>
+        <a href="/NITESH-KUMAR-SINGH-CV.pdf" download>📄 Download CV (PDF)</a>
         <a href="https://github.com/nkscoder" target="_blank" rel="me noopener noreferrer">👤 GitHub — nkscoder</a>
         <a href="https://www.linkedin.com/in/nitesh-kumar-singh-897437a2/" target="_blank" rel="me noopener noreferrer">💼 LinkedIn — Nitesh Kumar Singh</a>
         <a href="/contact.html">✉️ Contact via form</a>
@@ -802,8 +829,10 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 <strong>Nitesh Kumar Singh</strong> · NKSCoder · AI Developer · <a href="https://nkscoder.in" rel="me">nkscoder.in</a></p>
+      <p>&copy; 2026 <strong>Nitesh Kumar Singh</strong> · NKSCoder · AI Developer · <a href="https://nkscoder.in" rel="me">nkscoder.in</a> · <a href="https://statementiq.in/" target="_blank" rel="noopener noreferrer">statementiq.in</a></p>
       <div class="footer-links">
+        <a href="/NITESH-KUMAR-SINGH-CV.pdf" download>Download CV</a>
+        <a href="https://statementiq.in/" target="_blank" rel="noopener noreferrer">StatementIQ</a>
         <a href="https://github.com/nkscoder" target="_blank" rel="me noopener noreferrer">GitHub — nkscoder</a>
         <a href="https://www.linkedin.com/in/nitesh-kumar-singh-897437a2/" target="_blank" rel="me noopener noreferrer">LinkedIn — Nitesh Kumar Singh</a>
         <a href="tel:+917827495599">+91 7827495599</a>
